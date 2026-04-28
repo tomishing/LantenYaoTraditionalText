@@ -4,7 +4,7 @@ The purpose of this application is to make it easier for researchers and users t
 
 ## 2. Data
 
-The data consists of traditional texts from an ethnic minority in Southeast Asia. It is stored in MongoDB. Currently, 30 documents are stored as a test sample in a database called LantenDB.
+The data consists of traditional texts from Lanten Yao in Lao PDR. It is stored in MongoDB. Currently, 30 documents are stored as a test sample in a database called LantenDB.
 
 ## 3. Demonstration
 
@@ -83,10 +83,6 @@ backend/
 │
 └── middlewares/
 └── errorHandler.js → Global error catching
-
-### Backend Request-Response Flow
-
-Frontend -> server.js -> app.js -> routes -> controllers -> services & model -> Data
 
 ## Future Improvements
 
