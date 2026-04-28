@@ -1,0 +1,138 @@
+/* ── Layout ─────────────────────────────── */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f6f9;
+  text-align: center;
+}
+
+main.container {
+   max-width: 900px;   /* ✅ limit width */
+  margin: 0 auto;     /* ✅ center horizontally */
+}
+
+.footer {
+  border-top: 1px solid #dee2e6;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* ── Navbar ──────────────────────────────── */
+.navbar-brand-text {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* ── Cards ───────────────────────────────── */
+.doc-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.doc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.doc-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  min-height: 2.8rem;
+}
+
+.doc-card .card-footer {
+  border-top: 1px solid #f0f0f0;
+  background: transparent;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ── Badge colours ───────────────────────── */
+.badge-no {
+  background-color: #6c757d;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.badge-district {
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.badge-year {
+  background-color: #198754;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+/* ── Search bar ──────────────────────────── */
+.search-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Detail image ────────────────────────── */
+.detail-img-wrapper {
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.detail-img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;  /* show full image without cropping */
+}
+
+/* ── Detail table ────────────────────────── */
+.detail-table th {
+  width: 35%;
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+/* ── Spinner ─────────────────────────────── */
+.spinner-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+/* ── Form card ───────────────────────────── */
+.form-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-card, .search-box, .doc-card{
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ── Page heading ────────────────────────── */
+.page-heading {
+    text-align: center;
+}
+
+/* ── Notes text ──────────────────────────── */
+.notes-text {
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+}
