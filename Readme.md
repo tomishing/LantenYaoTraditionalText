@@ -28,11 +28,11 @@ The data consists of traditional texts from Lanten Yao in Lao PDR. It is stored 
 
 ## 4. Architecture diagram
 
-- Frontend: React + TanStack Query + Bootstrap + React Router │
+- Frontend: React + TanStack Query + Bootstrap + React Router 
 
 - API Layer: Axios (documentApi.js) 
 
-- BACKEND: Express + Mongoose + Sharp (Image Processing) │
+- BACKEND: Express + Mongoose + Sharp (Image Processing) 
 
 - DATABASE: MongoDB (Manuscript) 
 
