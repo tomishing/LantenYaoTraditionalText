@@ -28,19 +28,13 @@ The data consists of traditional texts from Lanten Yao in Lao PDR. It is stored 
 
 ## 4. Architecture diagram
 
-┌───────────────────────────────────────────────────┐
-│ FRONTEND │
-│ React + TanStack Query + Bootstrap + React Router │
-├───────────────────────────────────────────────────┤
-│ API LAYER │
-│ Axios (documentApi.js) │
-├───────────────────────────────────────────────────┤
-│ BACKEND │
-│ Express + Mongoose + Sharp (Image Processing) │
-├───────────────────────────────────────────────────┤
-│ DATABASE │
-│ MongoDB (Manuscript) │
-└───────────────────────────────────────────────────┘
+- Frontend: React + TanStack Query + Bootstrap + React Router │
+
+- API Layer: Axios (documentApi.js) 
+
+- BACKEND: Express + Mongoose + Sharp (Image Processing) │
+
+- DATABASE: MongoDB (Manuscript) 
 
 I use TanStack Query instead of useEffect because it automatically handles data fetching concerns like caching, refetching, loading/error states, and keeping data in sync after mutations, which is more straightforward than using useEffect and useState. This reduces bugs, and contributes readability.
 
@@ -53,36 +47,6 @@ Except using TanStack Query
 
 - _Google Maps_:
   The frontend renders a Google Map by receiving latitude and longitude coordinates from the backend, which are geocoded from the district and country names stored in the database.
-
-## 6. Backend routes and structure
-
-backend/
-├── server.js → Starts the server (entry point)
-├── app.js → Configures Express (middleware, routes, CORS)
-├── .env → Secret environment variables
-│
-├── config/
-│ └── db.js → MongoDB connection logic
-│
-├── models/
-│ └── textModel.js → Mongoose schema (data blueprint)
-│
-├── routes/
-│ ├── routes.js → Manuscript CRUD routes
-│ ├── imageRoutes.js → Image conversion routes
-│ └── geocodeRoute.js → Geocoding routes
-│
-├── controllers/
-│ ├── Controller.js → Manuscript CRUD logic
-│ ├── imageController.js → Image processing logic
-│ └── geocodeController.js → Geocoding logic
-│
-├── services/
-│ ├── imageService.js → Sharp TIFF→PNG conversion, Web browser cannot display TIFF.
-│ └── geocodeService.js → Google Maps API integration, External API
-│
-└── middlewares/
-└── errorHandler.js → Global error catching
 
 ## Future Improvements
 
