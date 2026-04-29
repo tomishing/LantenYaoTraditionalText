@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import documentApi from "../api/documentApi";
@@ -9,6 +10,12 @@ function EditPage() {
     const { id } = useParams();
     const navigate = useNavigate();
     const qc = useQueryClient();
+
+    useEffect(() => {
+        if (!localStorage.getItem("token")) {
+            navigate("/login");
+        }
+    }, [navigate]);
 
     const {
         data: doc,
@@ -29,9 +36,14 @@ function EditPage() {
             navigate("/");
         },
         onError: (err) => {
-            alert(
-                `Update error: ${err.response?.data?.message ?? err.message}`,
-            );
+            if (err.response?.status === 401) {
+                localStorage.removeItem("token");
+                navigate("/login");
+            } else {
+                alert(
+                    `Update error: ${err.response?.data?.message ?? err.message}`,
+                );
+            }
         },
     });
 

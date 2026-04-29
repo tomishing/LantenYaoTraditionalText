@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
 import EditPage from "./pages/EditPage";
 import DetailPage from "./pages/DetailPage";
+import LoginPage from "./pages/LoginPage";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -14,6 +15,7 @@ function App() {
             <main className="container py-4">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/login" element={<LoginPage />} />
                     <Route path="/create" element={<CreatePage />} />
                     <Route path="/edit/:id" element={<EditPage />} />
                     <Route path="/detail/:id" element={<DetailPage />} />

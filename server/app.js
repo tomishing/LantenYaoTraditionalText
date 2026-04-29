@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
 import router from "./routes/routes.js";
+import authRoutes from "./routes/authRoutes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import geocodeRouter from "./routes/geocodeRoute.js";
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // mount root
 app.use("/api/manuscripts", router);
+app.use("/api/auth", authRoutes);
 app.use("/images", express.static("images"));
 app.use("/pdfs", express.static("pdfs"));
 app.use("/api/geocode", geocodeRouter);

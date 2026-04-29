@@ -11,6 +11,14 @@ const client = axios.create({
     headers: { "Content-Type": "application/json" },
 });
 
+client.interceptors.request.use((config) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
+
 // Convert db path to full image URL
 export const getImageUrl = (pathImg) => {
     if (!pathImg) return null;
@@ -24,6 +32,11 @@ export const getPdfUrl = (pathPdf) => {
 };
 // CRUD operation on backend
 const documentApi = {
+    login: async (credentials) => {
+        const { data } = await client.post("/auth/login", credentials);
+        return data;
+    },
+
     getAll: async ({ page = 1, limit = 9, search = "" } = {}) => {
         const { data } = await client.get("/manuscripts", {
             params: { page, limit, search },

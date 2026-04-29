@@ -63,8 +63,8 @@ function DocumentDetail({ document: doc }) {
                             value={
                                 doc.created_at
                                     ? new Date(doc.created_at).toLocaleString(
-                                          "en-US",
-                                      )
+                                        "en-US",
+                                    )
                                     : null
                             }
                         />
@@ -73,8 +73,8 @@ function DocumentDetail({ document: doc }) {
                             value={
                                 doc.updated_at
                                     ? new Date(doc.updated_at).toLocaleString(
-                                          "en-US",
-                                      )
+                                        "en-US",
+                                    )
                                     : null
                             }
                         />
@@ -83,7 +83,7 @@ function DocumentDetail({ document: doc }) {
                                 <th className="detail-table-th">Original PDF</th>
                                 <td>
                                     <a href={pdfUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-primary">
-                                        View PDF
+                                        View Document
                                     </a>
                                 </td>
                             </tr>
