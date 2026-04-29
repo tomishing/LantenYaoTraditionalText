@@ -27,13 +27,13 @@ function DocumentCard({ doc }) {
                     {/* Title */}
                     <h5 className="card-title">{doc.title}</h5>
 
-                    {/* District */}
-                    {doc.district && (
+                    {/* Location */}
+                    {[doc.village, doc.district, doc.province, doc.country].filter(Boolean).length > 0 && (
                         <p className="card-text text-muted small mb-1">
                             <span className="fw-semibold">
                                 <FaMapMarkerAlt />
                             </span>{" "}
-                            {doc.district}
+                            {[doc.village, doc.district, doc.province, doc.country].filter(Boolean).join(", ")}
                         </p>
                     )}
 
