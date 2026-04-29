@@ -13,7 +13,7 @@ export default function MyNavbar() {
                 <Navbar.Collapse id="navMenu">
                     <Nav className="ms-auto">
                         <LinkContainer to="/">
-                            <Nav.Link>List</Nav.Link>
+                            <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>

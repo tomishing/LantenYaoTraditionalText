@@ -4,15 +4,15 @@ import { pool } from "../config/db.js";
 export const createManu = async (req, res, next) => {
     try {
         const {
-            id, category, title, transcribed_date_Original, possible_Gregorian_date,
-            possible_Gregorian_year, date_of_taken, country, province, district,
-            village, owner, length_mm, wide_mm, keywords, notes
+            id = null, category = null, title = null, transcribed_date_Original = null, possible_Gregorian_date = null,
+            possible_Gregorian_year = null, date_of_taken = null, country = null, province = null, district = null,
+            village = null, owner = null, length_mm = null, wide_mm = null, keywords = null, notes = null
         } = req.body;
 
         const result = await pool.query(
             `INSERT INTO documents (
-                id, category, title, "transcribed_date_Original", "possible_Gregorian_date",
-                "possible_Gregorian_year", date_of_taken, country, province, district,
+                id, category, title, transcribed_date_original, possible_gregorian_date,
+                possible_gregorian_year, date_of_taken, country, province, district,
                 village, owner, length_mm, wide_mm, keywords, notes
             ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING *`,
             [
@@ -46,8 +46,8 @@ export const getAllManu = async (req, res, next) => {
         const queryParams = [];
 
         if (search) {
-            queryText += ` WHERE d.title ILIKE $1 OR d.notes ILIKE $1`;
-            countQueryText += ` WHERE d.title ILIKE $1 OR d.notes ILIKE $1`;
+            queryText += ` WHERE d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
+            countQueryText += ` WHERE d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
             queryParams.push(`%${search}%`);
         }
 
@@ -109,18 +109,18 @@ export const getManuById = async (req, res, next) => {
 export const updateManu = async (req, res, next) => {
     try {
         const {
-            category, title, transcribed_date_Original, possible_Gregorian_date,
-            possible_Gregorian_year, date_of_taken, country, province, district,
-            village, owner, length_mm, wide_mm, keywords, notes
+            category = null, title = null, transcribed_date_Original = null, possible_Gregorian_date = null,
+            possible_Gregorian_year = null, date_of_taken = null, country = null, province = null, district = null,
+            village = null, owner = null, length_mm = null, wide_mm = null, keywords = null, notes = null
         } = req.body;
 
         const result = await pool.query(
             `UPDATE documents SET 
                 category = COALESCE($1, category),
                 title = COALESCE($2, title),
-                "transcribed_date_Original" = COALESCE($3, "transcribed_date_Original"),
-                "possible_Gregorian_date" = COALESCE($4, "possible_Gregorian_date"),
-                "possible_Gregorian_year" = COALESCE($5, "possible_Gregorian_year"),
+                transcribed_date_original = COALESCE($3, transcribed_date_original),
+                possible_gregorian_date = COALESCE($4, possible_gregorian_date),
+                possible_gregorian_year = COALESCE($5, possible_gregorian_year),
                 date_of_taken = COALESCE($6, date_of_taken),
                 country = COALESCE($7, country),
                 province = COALESCE($8, province),
