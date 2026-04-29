@@ -24,5 +24,12 @@ client/Dockerfile.dev
 client/compose.yml
 
 
+server/pdfs/
+server/images/
+*.pdf
+*jpg
+*png
+
+
 
 
