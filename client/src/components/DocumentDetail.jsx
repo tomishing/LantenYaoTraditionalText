@@ -48,7 +48,7 @@ function DocumentDetail({ document: doc }) {
                             label="Possible Gregorian Year"
                             value={doc.possible_Gregorian_year}
                         />
-                        <Row label="Date of Taken" value={doc.date_of_taken} />
+                        <Row label="Date of Taken" value={doc.date_of_taken ? doc.date_of_taken.substring(0, 10) : null} />
                         <Row label="Country" value={doc.country} />
                         <Row label="Province" value={doc.province} />
                         <Row label="District" value={doc.district} />

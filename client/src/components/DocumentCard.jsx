@@ -43,7 +43,7 @@ function DocumentCard({ doc }) {
                             <span className="fw-semibold">
                                 <BsCalendarDateFill />
                             </span>{" "}
-                            {doc.date_of_taken}
+                            {doc.date_of_taken.substring(0, 10)}
                         </p>
                     )}
 
