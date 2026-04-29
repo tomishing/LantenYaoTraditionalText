@@ -1,3 +1,5 @@
+![front_image.png]
+
 ## 1. Purpose
 
 The purpose of this application is to make it easier for researchers and users to manage traditional texts through, simple, clean, and a user-friendly interface. While a database is the most efficient way to manage a data collection, researchers are not necessarily skilled in database operations. Therefore, this application, named the Traditional Text Management System, is designed to help users browse, add, edit, and delete records without any technical knowledge of the underlying database.
