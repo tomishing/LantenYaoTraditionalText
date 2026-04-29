@@ -68,12 +68,6 @@ function DetailPage() {
                         Edit
                     </button>
                     <button
-                        className="btn btn-danger"
-                        onClick={() => setShowModal(true)}
-                    >
-                        Delete
-                    </button>
-                    <button
                         className="btn btn-outline-secondary"
                         onClick={() => navigate(-1)}
                     >
@@ -87,23 +81,6 @@ function DetailPage() {
                 <DocumentDetail document={doc} />
             </div>
 
-            {/* Confirm delete modal */}
-            <ConfirmModal
-                show={showModal}
-                title="Confirm Deletion"
-                message={
-                    <>
-                        Are you sure you want to delete{" "}
-                        <strong>"{doc?.title}"</strong>?<br />
-                        <span className="text-danger small">
-                            This action cannot be undone.
-                        </span>
-                    </>
-                }
-                onConfirm={() => deleteDoc()}
-                onCancel={() => setShowModal(false)}
-                isLoading={deleting} // ✅ now uses isPending
-            />
         </>
     );
 }

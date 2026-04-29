@@ -15,9 +15,6 @@ export default function MyNavbar() {
                         <LinkContainer to="/">
                             <Nav.Link>List</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/create">
-                            <Nav.Link>+ New Document</Nav.Link>
-                        </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -5,6 +5,7 @@ import CreatePage from "./pages/CreatePage";
 import EditPage from "./pages/EditPage";
 import DetailPage from "./pages/DetailPage";
 import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
     return (

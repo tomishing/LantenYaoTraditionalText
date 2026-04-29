@@ -8,8 +8,10 @@
 }
 
 main.container {
-   max-width: 900px;   /* ✅ limit width */
-  margin: 0 auto;     /* ✅ center horizontally */
+  max-width: 900px;
+  /* ✅ limit width */
+  margin: 0 auto;
+  /* ✅ center horizontally */
 }
 
 .footer {
@@ -81,8 +83,9 @@ main.container {
 
 /* ── Detail image ────────────────────────── */
 .detail-img-wrapper {
-  width: 100%;
-  max-height: 450px;
+  max-width: 600px;
+  max-height: 400px;
+  margin: 0 auto 1.5rem auto;
   overflow: hidden;
   background-color: #e9ecef;
   display: flex;
@@ -96,7 +99,8 @@ main.container {
   width: 100%;
   max-height: 100%;
   height: auto;
-  object-fit: contain;  /* show full image without cropping */
+  object-fit: contain;
+  /* show full image without cropping */
 }
 
 /* ── Detail table ────────────────────────── */
@@ -121,13 +125,16 @@ main.container {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.form-card, .search-box, .doc-card{
-    margin-left: auto;
-    margin-right: auto;
+.form-card,
+.search-box,
+.doc-card {
+  margin-left: auto;
+  margin-right: auto;
 }
+
 /* ── Page heading ────────────────────────── */
 .page-heading {
-    text-align: center;
+  text-align: center;
 }
 
 /* ── Notes text ──────────────────────────── */

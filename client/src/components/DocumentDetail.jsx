@@ -20,7 +20,7 @@ function DocumentDetail({ document: doc }) {
 
     return (
         <div>
-            <div className="text-center mb-3 mt-3">
+            <div className="detail-img-wrapper mb-3 mt-3">
                 <img
                     src={imageUrl || PLACEHOLDER}
                     alt={doc.title}
