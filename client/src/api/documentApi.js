@@ -11,12 +11,16 @@ const client = axios.create({
     headers: { "Content-Type": "application/json" },
 });
 
-// Convert db path to full image URL with width
-export const getImageUrl = (filePath, width = 800) => {
-    if (!filePath) return null;
-    const cleanPath = filePath.replace(/^(\.\/|\/)/, "");
-    const webPath = cleanPath.replace(/\.(tiff|tif)$/i, ".png");
-    return `${IMAGE_BASE_URL}/${webPath}?width=${width}`;
+// Convert db path to full image URL
+export const getImageUrl = (pathImg) => {
+    if (!pathImg) return null;
+    return `${IMAGE_BASE_URL}/images/${pathImg}`;
+};
+
+// Convert db path to full pdf URL
+export const getPdfUrl = (pathPdf) => {
+    if (!pathPdf) return null;
+    return `${IMAGE_BASE_URL}/pdfs/${pathPdf}`;
 };
 // CRUD operation on backend
 const documentApi = {

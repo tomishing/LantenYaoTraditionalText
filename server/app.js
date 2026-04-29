@@ -4,7 +4,6 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import router from "./routes/routes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
-import imageRoutes from "./routes/imageRoutes.js";
 import geocodeRouter from "./routes/geocodeRoute.js";
 const app = express();
 
@@ -19,7 +18,8 @@ app.use(express.json());
 
 // mount root
 app.use("/api/manuscripts", router);
-app.use(imageRoutes);
+app.use("/images", express.static("images"));
+app.use("/pdfs", express.static("pdfs"));
 app.use("/api/geocode", geocodeRouter);
 
 // Error

@@ -1,16 +1,21 @@
-import mongoose from "mongoose";
+import pg from "pg";
+const { Pool } = pg;
+
+export const pool = new Pool({
+    connectionString: process.env.PG_URI,
+});
+
 export const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI);
-        console.log("Connected MongoDB");
-        console.log(`Database: ${conn.connection.name}`); 
-        console.log(`URI: ${process.env.MONGODB_URI}`);
+        const client = await pool.connect();
+        console.log("Connected to PostgreSQL");
+        client.release();
     } catch (err) {
         console.log("Connection error: ", err.message);
     }
 };
 
 export const disconnectDB = async () => {
-    await mongoose.connection.close();
-    console.log("Connection closed");
+    await pool.end();
+    console.log("PostgreSQL connection closed");
 };
