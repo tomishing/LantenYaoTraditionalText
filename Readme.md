@@ -103,8 +103,4 @@ CREATE DATABASE lanten_db;
 
 To make the application more usable for users, the following features should be implemented:
 
-- Page Flip Viewer: A digital book viewer that allows users to flip through manuscript pages on the web browser, simulating the experience of reading a physical book.
-
-- PDF Download: The ability to download an entire manuscript as a single PDF file.
-
 - OCR (Optical Character Recognition): A feature that automatically extracts text from scanned manuscript images, converting them into searchable and editable text.
