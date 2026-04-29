@@ -1,4 +1,6 @@
-![front_image.png]
+
+<img width="2350" height="1834" alt="front_image" src="https://github.com/user-attachments/assets/6ac30995-50e2-4fc6-a25d-90923ed208e0" />
+
 
 ## 1. Purpose
 
