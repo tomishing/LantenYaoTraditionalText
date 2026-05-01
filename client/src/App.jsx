@@ -5,6 +5,10 @@ import CreatePage from "./pages/CreatePage";
 import EditPage from "./pages/EditPage";
 import DetailPage from "./pages/DetailPage";
 import LoginPage from "./pages/LoginPage";
+import About from "./pages/About";
+import MigrationLaos from "./pages/MigrationLaos";
+import MigrationChina from "./pages/MigrationChina";
+import Photoshooting from "./pages/Photoshooting";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -19,6 +23,10 @@ function App() {
                     <Route path="/create" element={<CreatePage />} />
                     <Route path="/edit/:id" element={<EditPage />} />
                     <Route path="/detail/:id" element={<DetailPage />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/migrationlaos" element={<MigrationLaos />} />
+                    <Route path="/migrationchina" element={<MigrationChina />} />
+                    <Route path="/photoshooting" element={<Photoshooting />} />
                 </Routes>
             </main>
             <Footer />

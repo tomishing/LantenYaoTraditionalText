@@ -28,7 +28,8 @@ server/pdfs/
 server/images/
 *.pdf
 *jpg
-*png
+.gitignore
+*.docx
 
 
 
