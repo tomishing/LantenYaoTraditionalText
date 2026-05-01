@@ -1,10 +1,412 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container } from "react-bootstrap";
 
 const Photoshooting = () => {
     return (
         <Container className="mt-4 mb-5 markdown-body">
-            <div dangerouslySetInnerHTML={{ __html: "<p>tags:</p>\n<h2>Photographing traditional community documents in the field</h2>\n<p>Toru SHIMIZU\nNihon University</p>\n<h3>Traditional community documents in Asia and documentation</h3>\n<p>In many places of Asia, traditional documents are kept within local in communities. This traditional community documents are preserved for many reasons, and the conditions under which they are kept are very different as well. Furthermore, the form of these documents may show great diversity. For these reasons, the photography methods for the field introduced here should be taken as the approach taken by this project, and not necessarily a general model for all cases. Rather, it is hoped that this information may offer a technical point of reference for other field-based photography projects aiming to preserve traditional community documents.</p>\n<p>In this project, we carried out activities to record and preserve the written texts used by the Lanten Yao, living in northern Laos, in their ritual practices. These texts are written on mulberry paper, often wrapped in cloth, and stored in wooden boxes in the house. The owners of the texts are <em>mo phi</em>, ritual performers, who are often men of influence within the village as well. Some of these texts are sacred, and cannot be viewed by anyone other than the ritual performer who owns them. This is commonly found in Southeast Asia and China. Under these conditions, it is clear that the texts cannot be borrowed for long periods of time in order to photograph them, and the only way to record them is to conduct the photography in the field.</p>\n<h3>Documentation through photography</h3>\n<p>In the recording and preservation of written texts, the main method used is photography. Alternatively, one could do manual copying of the texts, in which each letter or character is copied, either by hand or through a computer. Under most time constraints, this is not possible, not to mention that the possibility of mis-transcription and other problems with specialized characters and fonts is high. For these reasons, manual copying was not used in this project.</p>\n<p>For photography, the ideal process is to borrow the texts and conduct the photographing with a professional photographer at a studio. In cases where it is not possible to borrow the texts for a long period of time, photographing the texts in the field is the only option. This is the method used by the project.</p>\n<p>Of the option of film and digital photos, the project chose to do the photography with digital photos. Ten years ago, when there was still concern for quality and capacity for long-term storage, it was common to use both methods. Now, it is sufficient to conduction only digital photography.</p>\n<p>When recording texts through photography, it is of course necessary to calculate the size of the text and to record this basic data. Since it is impossible to predict what information about the text will be useful, it is best to photograph all parts of the text and any other associated things. These considerations would include the scenes of the village, the owner’s house, the place of storage, the storage conditions and if possible, the actual use of the texts. In addition, it is necessary to interview the owner of the text to ascertain details about the history and use of the text.</p>\n<h3>Documentation photography in the field</h3>\n<h4>Photography equipment</h4>\n<p>There are several types of photography equipment needed for this task, but none of them is too specialized. The same type of camera that is used for photographing product samples can be used. And since power supply is often unreliable in the field, large lighting equipment is not used as with photographic product samples.</p>\n<h5>Camera</h5>\n<p>A digital single lens reflex camera is used. A compact digital camera is fine for the job, but the single lens reflex camera allows you to verify the picture with more certainty than just on the monitor. Out-of-focus pictures can be avoided as well. If the camera resolution is more than 6 million pixels, reproduction at A3 size poses no problems. Zoom lenses with a range from 15mm to 50mm are convenient.</p>\n<h5>Tripod</h5>\n<p>The tripod needs to be able to put the camera lens parallel with the ground, allowing photography of the ground from front, which means that a slightly different type of tipod is needed. This will allow you to photograph the text, which is placed on the ground, from the front. Normal tripods cannot go parallel with the ground, which makes it difficult to get the photo from the front. It will also produce pictures in which the top is short and the bottom is stretched.</p>\n<h5>Photography box</h5>\n<p>During photography, a photography box is used to prevent the capture of other objects or excess light in the image. It is best to use a plastic material, such as used when photographing product samples. The possible size varies, at 75mm or 60 mm. A 75 mm box is convenient for photography in the field. Boxes are collapsible and portable.</p>\n<h5>Strobe</h5>\n<p>An external strobe can be used, but since the distance from the camera to the subject is not so great, the camera’s internal strobe is usually sufficient.</p>\n<h5>Diffusers</h5>\n<p>The diffuser is used to prevent the strobe from hitting the text directly. This also prevents glare and shadowing. There are many types of diffusers, but any should be fine as long is it prevents the strobe from hitting the text directly. In this project, we used a diffuser that attached directly to the camera lens.</p>\n<h5>Paperweight</h5>\n<p>This is placed on the text to prevent the pages from turning suddenly. There are glass and metal paperweights, but since they often appear in the image, a clear paperweight, or at least one that does not stand out too much, is best.</p>\n<h5>Construction paper</h5>\n<p>This is used as the background for the text, so a light color is best.</p>\n<h5>Putty eraser</h5>\n<p>This is used for the same purpose as the paperweight, to keep the pages from turning. The putty can be stuck between pages to secure them during photography.</p>\n<h5>Portable external hard disk for data storage</h5>\n<p>The number of pictures to be taken is quite large, hundreds and perhaps thousands, The camera memory will not be sufficient, so it is necessary to prepare additional storage capacity. For the external hard drive, the bigger the better, and it is safer to prepare more than one hard disk, so that the data can backed-up in the field.</p>\n<h5>Camera memory media</h5>\n<p>Since the number of pictures will be large, it is advisable to prepare as much additional camera memory as possible.</p>\n<h5>Laptop computer</h5>\n<p>This is essential for transferring data from the camera to the hard drive, and photographs can be checked on the computer as well. Furthermore, with some camera and computer link-ups, the shutter can be operated from the keyboard, meaning that camera does not need to be touched. In our project we used this set up as well.</p>\n<h5>Camera remote control</h5>\n<p>A remote control will help reduce blurry pictures resulting from unstable hands. Depending upon the camera, a release can also be used.</p>\n<h4>Photography methods</h4>\n<h5>Create a list of texts</h5>\n<p>The first step in a photography process is to make a list and compile the basic data about the texts to be recorded. This list should include the name and dimensions of the text. Any special observations about the text can be added to this list as well. The texts must be numbered to avoid confusion with the photographs</p>\n<h5>Decide on location of photography</h5>\n<p>The decision regarding the location of the photography is very important. The photography cannot be conducted in a place that gets direct sunlight, but at the same time places inside the house with insufficient natural light can result in difficulties in focus. The photography box should be set up in a place where there is some natural light, but avoiding direct sunlight. In our project, the texts are stored in houses with raised floors, built on stilts, so the photography was conducted on the terrace or in the open-air area under the floor.</p>\n<p>The background cloth or construction paper should be placed in the photography box. For photography of product samples, the opening of the box is normally placed on the side, but for shooting texts, the opening is put at the top of the box. The tripod is placed so that the camera looks down through the opening, with the lens parallel to the document on the floor.</p>\n<p>The strobe is attached to the camera and a few test photos should be taken to confirm the best exposure. Texts are often black writing on white paper, which means that the photos are often under exposed so this should be adjusted manually. With a digital camera, the programmed exposure priority mode can be used, but this should still be checked before hand.</p>\n<h5>Tagging</h5>\n<p>Labels or tags with the text number should be attached, to indicate which texts are being photographed. If there are time constraints, the dimensions of the text can be included on this tag.</p>\n<h5>Conduct photography</h5>\n<p>During photography, the camera should not be touched. The shutter should be controlled with a remote control or release, or through a link with the laptop. This will prevent out-of-focus pictures. Furthermore, setting a color scale ahead of time will make it easier to adjust the colors after the session, although this can be skipped in the field depending upon the conditions.</p>\n<p>The text should be photographed starting with the cover, and the photos should include pages with no writing as well. Depending upon the size of the text, the decision of whether to shoot one or two pages in each image should be made. It is usually convenient and efficient to shoot two open pages in one image.</p>\n<p>Pages may not lay flat, in which case the paper weight or putty eraser should be used. In order to photograph the difficult area in gutter or inner margin, it may be necessary to take multiple pictures. Sufficient note should be taken in this case. Any papers that are folded into the text should also be photographed. The entire text should be photographed from front to back cover.</p>\n<h5>Save photo data</h5>\n<p>The photographs should be saved on the hard disk, with backup, each day after the photography session.</p>\n<h4>Caution when doing photography</h4>\n<p>There are several points of caution that should be considered during field photography sessions.</p>\n<p>First, the photography should be conducted swiftly and smoothly. Although there are many steps and the process will take time, photography should be completed swiftly. The texts being recorded are highly valuable objects for the owner and the village, and the time they are borrowed should be as short as possible. Also, the owner will likely be joining the session, out of concern for damage to the texts.</p>\n<p>Second, all pages of the text should be photographed. Outer and inner covers, and pages with no writing should all be photographed. The recorded data should cover the entire text, as is.</p>\n<p>The third point is sufficient consideration of the lighting. Direct sunlight can create shadows or excessively high contrast. Night photography is not desirable because of the lack of natural light.</p>\n<p>The fourth point is taking care in saving the data, including making backups of all data. Data that is not saved and backed up is vulnerable to irreparable loss.</p>\n<p>Finally, one needs to consider the electricity source. In the field it is often the case that electricity is not available on-site, so cameras and laptops must be fully charged before each session, to the extent possible. Furthermore, spare batteries should be prepared. If the team is staying in a guesthouse outside of the village, batteries can be charged before the session. If staying in a village without electricity, a portable generator is necessary.</p>\n<h3>Final comments</h3>\n<p>There is no avoiding the fact that photographs of documents taken in the field will be of lower quality than those taken in a studio. But all efforts to take good photographs under difficult field conditions must be taken. As these digital photographs are a form of documentation and preservation, there is no need to elaborate on the need for care and attention to each step in the process. Fieldwork always has its difficulties, but if the methods are implemented carefully, digitalized reproductions of documents can be extremely useful resources.</p>\n<p><img src=\"/camera.png\" alt=\"image\">\nFigure 1. Digital camera with strobe diffuser. Kenko SDF-26 or Jumbo SDF-340.</p>\n<p><img src=\"/tripod.png\" alt=\"image\">\nFigure 2. Tripod. Manfrotto 190XPROB.</p>\n<p><img src=\"/tripod01.png\" alt=\"image\">\nFigure 3. Digital camera studio box. Hakuba digital camera studio box 75.</p>\n<p><img src=\"/shooting02.png\" alt=\"image\">\nFigure 4. Photo shooting. Photographs were taken using software Nikon Camera control pro version 2.4.0.</p>\n<p><img src=\"/shooting01.png\" alt=\"image\">\nFigure 5. Photo shooting.</p>\n<p><img src=\"/shooting03.png\" alt=\"image\">\nFigure 6. Photo shooting.</p>\n<p><img src=\"/P1040330.jpg\" alt=\"image\">\nFigure 7. Photo shooting (Photo by Tomita, S., Aug 17, 2009).</p>\n" }} />
+            <div className="about-container">
+                <h2>
+                    Photographing traditional community documents in the field
+                </h2>
+
+                <br />
+                <h3>
+                    Traditional community documents in Asia and documentation
+                </h3>
+                <p>
+                    In many places of Asia, traditional documents are kept
+                    within local in communities. This traditional community
+                    documents are preserved for many reasons, and the conditions
+                    under which they are kept are very different as well.
+                    Furthermore, the form of these documents may show great
+                    diversity. For these reasons, the photography methods for
+                    the field introduced here should be taken as the approach
+                    taken by this project, and not necessarily a general model
+                    for all cases. Rather, it is hoped that this information may
+                    offer a technical point of reference for other field-based
+                    photography projects aiming to preserve traditional
+                    community documents.
+                </p>
+                <p>
+                    In this project, we carried out activities to record and
+                    preserve the written texts used by the Lanten Yao, living in
+                    northern Laos, in their ritual practices. These texts are
+                    written on mulberry paper, often wrapped in cloth, and
+                    stored in wooden boxes in the house. The owners of the texts
+                    are <em>mo phi</em>, ritual performers, who are often men of
+                    influence within the village as well. Some of these texts
+                    are sacred, and cannot be viewed by anyone other than the
+                    ritual performer who owns them. This is commonly found in
+                    Southeast Asia and China. Under these conditions, it is
+                    clear that the texts cannot be borrowed for long periods of
+                    time in order to photograph them, and the only way to record
+                    them is to conduct the photography in the field.
+                </p>
+
+                <br />
+                <h3>Documentation through photography</h3>
+                <p>
+                    In the recording and preservation of written texts, the main
+                    method used is photography. Alternatively, one could do
+                    manual copying of the texts, in which each letter or
+                    character is copied, either by hand or through a computer.
+                    Under most time constraints, this is not possible, not to
+                    mention that the possibility of mis-transcription and other
+                    problems with specialized characters and fonts is high. For
+                    these reasons, manual copying was not used in this project.
+                </p>
+                <p>
+                    For photography, the ideal process is to borrow the texts
+                    and conduct the photographing with a professional
+                    photographer at a studio. In cases where it is not possible
+                    to borrow the texts for a long period of time, photographing
+                    the texts in the field is the only option. This is the
+                    method used by the project.
+                </p>
+                <p>
+                    Of the option of film and digital photos, the project chose
+                    to do the photography with digital photos. Ten years ago,
+                    when there was still concern for quality and capacity for
+                    long-term storage, it was common to use both methods. Now,
+                    it is sufficient to conduction only digital photography.
+                </p>
+                <p>
+                    When recording texts through photography, it is of course
+                    necessary to calculate the size of the text and to record
+                    this basic data. Since it is impossible to predict what
+                    information about the text will be useful, it is best to
+                    photograph all parts of the text and any other associated
+                    things. These considerations would include the scenes of the
+                    village, the owner's house, the place of storage, the
+                    storage conditions and if possible, the actual use of the
+                    texts. In addition, it is necessary to interview the owner
+                    of the text to ascertain details about the history and use
+                    of the text.
+                </p>
+
+                <br />
+                <h3>Documentation photography in the field</h3>
+
+                <h4>Photography equipment</h4>
+                <p>
+                    There are several types of photography equipment needed for
+                    this task, but none of them is too specialized. The same
+                    type of camera that is used for photographing product
+                    samples can be used. And since power supply is often
+                    unreliable in the field, large lighting equipment is not
+                    used as with photographic product samples.
+                </p>
+
+                <h5>Camera</h5>
+                <p>
+                    A digital single lens reflex camera is used. A compact
+                    digital camera is fine for the job, but the single lens
+                    reflex camera allows you to verify the picture with more
+                    certainty than just on the monitor. Out-of-focus pictures
+                    can be avoided as well. If the camera resolution is more
+                    than 6 million pixels, reproduction at A3 size poses no
+                    problems. Zoom lenses with a range from 15mm to 50mm are
+                    convenient.
+                </p>
+
+                <h5>Tripod</h5>
+                <p>
+                    The tripod needs to be able to put the camera lens parallel
+                    with the ground, allowing photography of the ground from
+                    front, which means that a slightly different type of tipod
+                    is needed. This will allow you to photograph the text, which
+                    is placed on the ground, from the front. Normal tripods
+                    cannot go parallel with the ground, which makes it difficult
+                    to get the photo from the front. It will also produce
+                    pictures in which the top is short and the bottom is
+                    stretched.
+                </p>
+
+                <h5>Photography box</h5>
+                <p>
+                    During photography, a photography box is used to prevent the
+                    capture of other objects or excess light in the image. It is
+                    best to use a plastic material, such as used when
+                    photographing product samples. The possible size varies, at
+                    75mm or 60 mm. A 75 mm box is convenient for photography in
+                    the field. Boxes are collapsible and portable.
+                </p>
+
+                <h5>Strobe</h5>
+                <p>
+                    An external strobe can be used, but since the distance from
+                    the camera to the subject is not so great, the camera's
+                    internal strobe is usually sufficient.
+                </p>
+
+                <h5>Diffusers</h5>
+                <p>
+                    The diffuser is used to prevent the strobe from hitting the
+                    text directly. This also prevents glare and shadowing. There
+                    are many types of diffusers, but any should be fine as long
+                    is it prevents the strobe from hitting the text directly. In
+                    this project, we used a diffuser that attached directly to
+                    the camera lens.
+                </p>
+
+                <h5>Paperweight</h5>
+                <p>
+                    This is placed on the text to prevent the pages from turning
+                    suddenly. There are glass and metal paperweights, but since
+                    they often appear in the image, a clear paperweight, or at
+                    least one that does not stand out too much, is best.
+                </p>
+
+                <h5>Construction paper</h5>
+                <p>
+                    This is used as the background for the text, so a light
+                    color is best.
+                </p>
+
+                <h5>Putty eraser</h5>
+                <p>
+                    This is used for the same purpose as the paperweight, to
+                    keep the pages from turning. The putty can be stuck between
+                    pages to secure them during photography.
+                </p>
+
+                <h5>Portable external hard disk for data storage</h5>
+                <p>
+                    The number of pictures to be taken is quite large, hundreds
+                    and perhaps thousands, The camera memory will not be
+                    sufficient, so it is necessary to prepare additional storage
+                    capacity. For the external hard drive, the bigger the
+                    better, and it is safer to prepare more than one hard disk,
+                    so that the data can backed-up in the field.
+                </p>
+
+                <h5>Camera memory media</h5>
+                <p>
+                    Since the number of pictures will be large, it is advisable
+                    to prepare as much additional camera memory as possible.
+                </p>
+
+                <h5>Laptop computer</h5>
+                <p>
+                    This is essential for transferring data from the camera to
+                    the hard drive, and photographs can be checked on the
+                    computer as well. Furthermore, with some camera and computer
+                    link-ups, the shutter can be operated from the keyboard,
+                    meaning that camera does not need to be touched. In our
+                    project we used this set up as well.
+                </p>
+
+                <h5>Camera remote control</h5>
+                <p>
+                    A remote control will help reduce blurry pictures resulting
+                    from unstable hands. Depending upon the camera, a release
+                    can also be used.
+                </p>
+
+                <h4>Photography methods</h4>
+
+                <h5>Create a list of texts</h5>
+                <p>
+                    The first step in a photography process is to make a list
+                    and compile the basic data about the texts to be recorded.
+                    This list should include the name and dimensions of the
+                    text. Any special observations about the text can be added
+                    to this list as well. The texts must be numbered to avoid
+                    confusion with the photographs.
+                </p>
+
+                <h5>Decide on location of photography</h5>
+                <p>
+                    The decision regarding the location of the photography is
+                    very important. The photography cannot be conducted in a
+                    place that gets direct sunlight, but at the same time places
+                    inside the house with insufficient natural light can result
+                    in difficulties in focus. The photography box should be set
+                    up in a place where there is some natural light, but
+                    avoiding direct sunlight. In our project, the texts are
+                    stored in houses with raised floors, built on stilts, so the
+                    photography was conducted on the terrace or in the open-air
+                    area under the floor.
+                </p>
+                <p>
+                    The background cloth or construction paper should be placed
+                    in the photography box. For photography of product samples,
+                    the opening of the box is normally placed on the side, but
+                    for shooting texts, the opening is put at the top of the
+                    box. The tripod is placed so that the camera looks down
+                    through the opening, with the lens parallel to the document
+                    on the floor.
+                </p>
+                <p>
+                    The strobe is attached to the camera and a few test photos
+                    should be taken to confirm the best exposure. Texts are
+                    often black writing on white paper, which means that the
+                    photos are often under exposed so this should be adjusted
+                    manually. With a digital camera, the programmed exposure
+                    priority mode can be used, but this should still be checked
+                    before hand.
+                </p>
+
+                <h5>Tagging</h5>
+                <p>
+                    Labels or tags with the text number should be attached, to
+                    indicate which texts are being photographed. If there are
+                    time constraints, the dimensions of the text can be included
+                    on this tag.
+                </p>
+
+                <h5>Conduct photography</h5>
+                <p>
+                    During photography, the camera should not be touched. The
+                    shutter should be controlled with a remote control or
+                    release, or through a link with the laptop. This will
+                    prevent out-of-focus pictures. Furthermore, setting a color
+                    scale ahead of time will make it easier to adjust the colors
+                    after the session, although this can be skipped in the field
+                    depending upon the conditions.
+                </p>
+                <p>
+                    The text should be photographed starting with the cover, and
+                    the photos should include pages with no writing as well.
+                    Depending upon the size of the text, the decision of whether
+                    to shoot one or two pages in each image should be made. It
+                    is usually convenient and efficient to shoot two open pages
+                    in one image.
+                </p>
+                <p>
+                    Pages may not lay flat, in which case the paper weight or
+                    putty eraser should be used. In order to photograph the
+                    difficult area in gutter or inner margin, it may be
+                    necessary to take multiple pictures. Sufficient note should
+                    be taken in this case. Any papers that are folded into the
+                    text should also be photographed. The entire text should be
+                    photographed from front to back cover.
+                </p>
+
+                <h5>Save photo data</h5>
+                <p>
+                    The photographs should be saved on the hard disk, with
+                    backup, each day after the photography session.
+                </p>
+
+                <h4>Caution when doing photography</h4>
+                <p>
+                    There are several points of caution that should be
+                    considered during field photography sessions.
+                </p>
+                <p>
+                    First, the photography should be conducted swiftly and
+                    smoothly. Although there are many steps and the process will
+                    take time, photography should be completed swiftly. The
+                    texts being recorded are highly valuable objects for the
+                    owner and the village, and the time they are borrowed should
+                    be as short as possible. Also, the owner will likely be
+                    joining the session, out of concern for damage to the texts.
+                </p>
+                <p>
+                    Second, all pages of the text should be photographed. Outer
+                    and inner covers, and pages with no writing should all be
+                    photographed. The recorded data should cover the entire
+                    text, as is.
+                </p>
+                <p>
+                    The third point is sufficient consideration of the lighting.
+                    Direct sunlight can create shadows or excessively high
+                    contrast. Night photography is not desirable because of the
+                    lack of natural light.
+                </p>
+                <p>
+                    The fourth point is taking care in saving the data,
+                    including making backups of all data. Data that is not saved
+                    and backed up is vulnerable to irreparable loss.
+                </p>
+                <p>
+                    Finally, one needs to consider the electricity source. In
+                    the field it is often the case that electricity is not
+                    available on-site, so cameras and laptops must be fully
+                    charged before each session, to the extent possible.
+                    Furthermore, spare batteries should be prepared. If the team
+                    is staying in a guesthouse outside of the village, batteries
+                    can be charged before the session. If staying in a village
+                    without electricity, a portable generator is necessary.
+                </p>
+
+                <br />
+                <h3>Final comments</h3>
+                <p>
+                    There is no avoiding the fact that photographs of documents
+                    taken in the field will be of lower quality than those taken
+                    in a studio. But all efforts to take good photographs under
+                    difficult field conditions must be taken. As these digital
+                    photographs are a form of documentation and preservation,
+                    there is no need to elaborate on the need for care and
+                    attention to each step in the process. Fieldwork always has
+                    its difficulties, but if the methods are implemented
+                    carefully, digitalized reproductions of documents can be
+                    extremely useful resources.
+                </p>
+
+                <figure className="image-figure">
+                    <img
+                        src="/camera.png"
+                        alt="Digital camera with strobe diffuser"
+                    />
+                    <figcaption>
+                        Figure 1. Digital camera with strobe diffuser. Kenko
+                        SDF-26 or Jumbo SDF-340.
+                    </figcaption>
+                </figure>
+
+                <figure className="image-figure">
+                    <img src="/tripod.png" alt="Tripod" />
+                    <figcaption>
+                        Figure 2. Tripod. Manfrotto 190XPROB.
+                    </figcaption>
+                </figure>
+
+                <figure className="image-figure">
+                    <img src="/tripod01.png" alt="Digital camera studio box" />
+                    <figcaption>
+                        Figure 3. Digital camera studio box. Hakuba digital
+                        camera studio box 75.
+                    </figcaption>
+                </figure>
+
+                <figure className="image-figure">
+                    <img src="/shooting02.png" alt="Photo shooting" />
+                    <figcaption>
+                        Figure 4. Photo shooting. Photographs were taken using
+                        software Nikon Camera control pro version 2.4.0.
+                    </figcaption>
+                </figure>
+
+                <figure className="image-figure">
+                    <img src="/shooting01.png" alt="Photo shooting" />
+                    <figcaption>Figure 5. Photo shooting.</figcaption>
+                </figure>
+
+                <figure className="image-figure">
+                    <img src="/shooting03.png" alt="Photo shooting" />
+                    <figcaption>Figure 6. Photo shooting.</figcaption>
+                </figure>
+
+                <figure className="image-figure">
+                    <img
+                        src="/P1040330.JPG"
+                        alt="Photo shooting in the field"
+                    />
+                    <figcaption>
+                        Figure 7. Photo shooting (Photo by Tomita, S., Aug 17,
+                        2009).
+                    </figcaption>
+                </figure>
+
+                <br />
+                <section>
+                    Toru SHIMIZU
+                    <br />
+                    Nihon University
+                </section>
+            </div>
         </Container>
     );
 };

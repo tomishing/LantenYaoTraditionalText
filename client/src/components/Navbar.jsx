@@ -21,18 +21,35 @@ export default function MyNavbar() {
                 <Navbar.Toggle aria-controls="navMenu" />
                 <Navbar.Collapse id="navMenu">
                     <Nav className="ms-auto">
-                        <NavDropdown title="About the project" id="basic-nav-dropdown">
+                        <NavDropdown
+                            title="About the project"
+                            id="basic-nav-dropdown"
+                        >
                             <LinkContainer to="/about">
                                 <NavDropdown.Item>Overview</NavDropdown.Item>
                             </LinkContainer>
-                            <LinkContainer to="/migrationlaos">
-                                <NavDropdown.Item>Migration Laos</NavDropdown.Item>
+                            <LinkContainer to="/rituals">
+                                <NavDropdown.Item>
+                                    Rituals and Traditional Texts
+                                </NavDropdown.Item>
                             </LinkContainer>
                             <LinkContainer to="/migrationchina">
-                                <NavDropdown.Item>Migration China</NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    Histroy of Migration Based on Documents
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                            <LinkContainer to="/migrationlaos">
+                                <NavDropdown.Item>
+                                    History of Migration Based on Narratives
+                                </NavDropdown.Item>
                             </LinkContainer>
                             <LinkContainer to="/photoshooting">
-                                <NavDropdown.Item>Photoshooting</NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    Photographing in the Fields
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                            <LinkContainer to="/references">
+                                <NavDropdown.Item>References</NavDropdown.Item>
                             </LinkContainer>
                         </NavDropdown>
                         <LinkContainer to="/">

@@ -10,6 +10,8 @@ import MigrationLaos from "./pages/MigrationLaos";
 import MigrationChina from "./pages/MigrationChina";
 import Photoshooting from "./pages/Photoshooting";
 import Footer from "./components/Footer";
+import References from "./pages/References";
+import Rituals from "./pages/Rituals";
 import "./App.css";
 
 function App() {
@@ -25,8 +27,13 @@ function App() {
                     <Route path="/detail/:id" element={<DetailPage />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/migrationlaos" element={<MigrationLaos />} />
-                    <Route path="/migrationchina" element={<MigrationChina />} />
+                    <Route
+                        path="/migrationchina"
+                        element={<MigrationChina />}
+                    />
                     <Route path="/photoshooting" element={<Photoshooting />} />
+                    <Route path="/references" element={<References />} />
+                    <Route path="/rituals" element={<Rituals />} />
                 </Routes>
             </main>
             <Footer />
