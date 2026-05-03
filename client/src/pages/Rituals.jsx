@@ -63,10 +63,6 @@ const Rituals = () => {
                             <td>一本交簡練度科</td>
                         </tr>
                         <tr>
-                            <td>165</td>
-                            <td>一本交簡練度科</td>
-                        </tr>
-                        <tr>
                             <td>178</td>
                             <td>斎醮神目一本</td>
                         </tr>
