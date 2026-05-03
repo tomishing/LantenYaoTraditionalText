@@ -21,6 +21,9 @@ export default function MyNavbar() {
                 <Navbar.Toggle aria-controls="navMenu" />
                 <Navbar.Collapse id="navMenu">
                     <Nav className="ms-auto">
+                        <LinkContainer to="/">
+                            <Nav.Link>Search Texts</Nav.Link>
+                        </LinkContainer>
                         <NavDropdown
                             title="About the project"
                             id="basic-nav-dropdown"
@@ -52,9 +55,6 @@ export default function MyNavbar() {
                                 <NavDropdown.Item>References</NavDropdown.Item>
                             </LinkContainer>
                         </NavDropdown>
-                        <LinkContainer to="/">
-                            <Nav.Link>Search Texts</Nav.Link>
-                        </LinkContainer>
                         {token ? (
                             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                         ) : (
