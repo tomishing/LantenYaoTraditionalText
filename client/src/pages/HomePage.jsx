@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import documentApi from "../api/documentApi";
 import DocumentList from "../components/DocumentList";
@@ -12,10 +13,9 @@ function HomePage() {
     // access to query client in main.jsx
     const qc = useQueryClient();
 
-    // Page viewing
-    const [page, setPage] = useState(1);
-    // Current search term
-    const [search, setSearch] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const page = parseInt(searchParams.get("page") || "1", 10);
+    const search = searchParams.get("search") || "";
     // The delete confirmation
     const [modal, setModal] = useState({ show: false, id: null, title: "" });
 
@@ -52,8 +52,20 @@ function HomePage() {
 
     // ** Event Handlers
     const handleSearch = (value) => {
-        setSearch(value);
-        setPage(1);
+        const params = new URLSearchParams(searchParams);
+        if (value) {
+            params.set("search", value);
+        } else {
+            params.delete("search");
+        }
+        params.set("page", "1");
+        setSearchParams(params);
+    };
+
+    const handlePageChange = (newPage) => {
+        const params = new URLSearchParams(searchParams);
+        params.set("page", newPage);
+        setSearchParams(params);
     };
 
     const handleDeleteRequest = (id, title) =>
@@ -72,7 +84,7 @@ function HomePage() {
                 )}
             </div>
 
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={handleSearch} initialSearch={search} />
             {/* // Conditional Rendering */}
             {isLoading ? (
                 <div className="spinner-wrap">
@@ -92,7 +104,7 @@ function HomePage() {
                     <Pagination
                         currentPage={data?.currentPage ?? 1}
                         totalPages={data?.totalPages ?? 1}
-                        onPageChange={setPage}
+                        onPageChange={handlePageChange}
                     />
                 </>
             )}

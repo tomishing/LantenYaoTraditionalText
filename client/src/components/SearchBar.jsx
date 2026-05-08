@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 
-function SearchBar({ onSearch }) {
-    const [search, setSearch] = useState("");
+function SearchBar({ onSearch, initialSearch = "" }) {
+    const [search, setSearch] = useState(initialSearch);
+
+    useEffect(() => {
+        setSearch(initialSearch);
+    }, [initialSearch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
