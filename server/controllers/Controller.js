@@ -46,8 +46,8 @@ export const getAllManu = async (req, res, next) => {
         const queryParams = [];
 
         if (search) {
-            queryText += ` WHERE d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
-            countQueryText += ` WHERE d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
+            queryText += ` WHERE CAST(d.id AS TEXT) ILIKE $1 OR d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
+            countQueryText += ` WHERE CAST(d.id AS TEXT) ILIKE $1 OR d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
             queryParams.push(`%${search}%`);
         }
 

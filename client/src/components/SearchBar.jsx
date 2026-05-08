@@ -25,7 +25,7 @@ function SearchBar({ onSearch }) {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Search by title or notes..."
+                        placeholder="Search by ID, title, keywords, or notes..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
