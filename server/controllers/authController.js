@@ -13,7 +13,15 @@ export const login = async (req, res, next) => {
         }
 
         if (username === process.env.ADMIN_USERNAME) {
-            const isPasswordValid = await bcrypt.compare(password, process.env.ADMIN_PASSWORD_HASH || process.env.ADMIN_PASSWORD);
+            let isPasswordValid = false;
+
+            // Check if using hashed password
+            if (process.env.ADMIN_PASSWORD_HASH) {
+                isPasswordValid = await bcrypt.compare(password, process.env.ADMIN_PASSWORD_HASH);
+            } else {
+                // Fallback to plaintext comparison (for backward compatibility)
+                isPasswordValid = password === process.env.ADMIN_PASSWORD;
+            }
 
             if (isPasswordValid) {
                 const token = jwt.sign(
