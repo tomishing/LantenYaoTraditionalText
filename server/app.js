@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import helmet from "helmet";
 import { connectDB } from "./config/db.js";
 import router from "./routes/routes.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -11,18 +12,28 @@ const app = express();
 // Database connection
 await connectDB();
 
-// communicate with frontend.
-app.use(cors({ origin: "http://localhost:5173" }));
+// Security middleware
+app.use(helmet());
+
+// CORS - configurable for different environments
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5173").split(",");
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 // for reading req.body from frontend, req.body
-app.use(express.json());
+app.use(express.json({ limit: "10kb" }));
 
 // mount root
-app.use("/api/manuscripts", router);
 app.use("/api/auth", authRoutes);
-app.use("/images", express.static("images"));
-app.use("/pdfs", express.static("pdfs"));
+app.use("/api/manuscripts", router);
 app.use("/api/geocode", geocodeRouter);
+
+// Protected static files
+import { authenticate } from "./middlewares/authMiddleware.js";
+app.use("/images", authenticate, express.static("images"));
+app.use("/pdfs", authenticate, express.static("pdfs"));
 
 // Error
 app.use(errorHandler);
