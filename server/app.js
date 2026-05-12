@@ -30,9 +30,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/manuscripts", router);
 app.use("/api/geocode", geocodeRouter);
 
-// Protected static files
+// Public images, protected PDFs
 import { authenticate } from "./middlewares/authMiddleware.js";
-app.use("/images", authenticate, express.static("images"));
+app.use("/images", express.static("images"));
 app.use("/pdfs", authenticate, express.static("pdfs"));
 
 // Error
