@@ -1,6 +1,10 @@
-# Environment variables
+# Environment variables (actual .env files are ignored)
 client/.env
 server/.env
+
+# But .env.example files are tracked for documentation
+!client/.env.example
+!server/.env.example
 
 # Node modules
 client/node_modules/
