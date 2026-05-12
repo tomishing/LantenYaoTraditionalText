@@ -25,10 +25,12 @@ export const getImageUrl = (pathImg) => {
     return `${IMAGE_BASE_URL}/images/${pathImg}`;
 };
 
-// Convert db path to full pdf URL
+// Convert db path to full pdf URL (includes token for authentication)
 export const getPdfUrl = (pathPdf) => {
     if (!pathPdf) return null;
-    return `${IMAGE_BASE_URL}/pdfs/${pathPdf}`;
+    const token = localStorage.getItem("token");
+    if (!token) return null;
+    return `${IMAGE_BASE_URL}/api/pdfs/${pathPdf}?token=${token}`;
 };
 // CRUD operation on backend
 const documentApi = {
