@@ -12,14 +12,21 @@ const app = express();
 // Database connection
 await connectDB();
 
-// Security middleware
-app.use(helmet());
-
-// CORS - configurable for different environments
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5173").split(",");
+// CORS - configurable for different environments (must come before helmet)
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5173").split(",").map(o => o.trim());
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
+}));
+
+// Security middleware
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https:"],
+    }
+  }
 }));
 
 // for reading req.body from frontend, req.body
