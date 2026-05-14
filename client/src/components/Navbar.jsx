@@ -15,9 +15,11 @@ export default function MyNavbar() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm">
             <Container>
-                <Navbar.Brand>
-                    <RiBookShelfFill /> Lanten Yao Traditional Text Archive
-                </Navbar.Brand>
+                <LinkContainer to="/">
+                    <Navbar.Brand style={{ cursor: "pointer" }}>
+                        <RiBookShelfFill /> Lanten Yao Traditional Text Archive
+                    </Navbar.Brand>
+                </LinkContainer>
                 <Navbar.Toggle aria-controls="navMenu" />
                 <Navbar.Collapse id="navMenu">
                     <Nav className="ms-auto">
