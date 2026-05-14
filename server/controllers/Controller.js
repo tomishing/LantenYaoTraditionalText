@@ -1,4 +1,13 @@
 import { pool } from "../config/db.js";
+import { getPdfUrl } from "../services/r2Service.js";
+
+const transformDocumentWithUrls = (doc) => {
+    return {
+        ...doc,
+        image_url: doc.path_img ? `/images/${doc.path_img}` : null,
+        pdf_url: doc.path_pdf ? getPdfUrl(doc.path_pdf) : null,
+    };
+};
 
 // Create new record
 export const createManu = async (req, res, next) => {
@@ -68,7 +77,7 @@ export const getAllManu = async (req, res, next) => {
         // return the response
         res.status(200).json({
             success: true,
-            documents: result.rows,
+            documents: result.rows.map(transformDocumentWithUrls),
             total,
             currentPage: pageNum,
             totalPages: Math.ceil(total / limitNum),
@@ -98,7 +107,7 @@ export const getManuById = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
-            data: result.rows[0],
+            data: transformDocumentWithUrls(result.rows[0]),
         });
     } catch (err) {
         next(err);
@@ -150,7 +159,7 @@ export const updateManu = async (req, res, next) => {
         res.status(200).json({
             success: true,
             message: "Document updated",
-            data: result.rows[0],
+            data: transformDocumentWithUrls(result.rows[0]),
         });
     } catch (err) {
         next(err);
@@ -178,7 +187,7 @@ export const deleteManu = async (req, res, next) => {
         res.status(200).json({
             success: true,
             message: "Document deleted",
-            data: result.rows[0],
+            data: transformDocumentWithUrls(result.rows[0]),
         });
     } catch (err) {
         next(err);

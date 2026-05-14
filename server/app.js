@@ -33,11 +33,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/manuscripts", router);
 app.use("/api/geocode", geocodeRouter);
 
-// Public images
-app.use("/images", express.static("images"));
-
-// Protected PDFs via /api/pdfs/:filename?token=<jwt>
+// Images and PDFs via R2 (proxied through API)
+import imageRouter from "./routes/imageRoute.js";
 import pdfRouter from "./routes/pdfRoute.js";
+app.use("/images", imageRouter);
 app.use("/api/pdfs", pdfRouter);
 
 // Error

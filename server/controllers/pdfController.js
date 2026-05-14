@@ -1,9 +1,6 @@
 import jwt from "jsonwebtoken";
 import path from "path";
-import { fileURLToPath } from "url";
-import fs from "fs";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { getPdfUrl } from "../services/r2Service.js";
 
 const unauthorizedHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -43,12 +40,7 @@ export const servePdf = (req, res) => {
     }
 
     const filename = path.basename(req.params.filename);
-    const filePath = path.join(__dirname, "..", "pdfs", filename);
+    const pdfUrl = getPdfUrl(filename);
 
-    if (!fs.existsSync(filePath)) {
-        return res.status(404).send("<h2>PDF not found</h2>");
-    }
-
-    res.setHeader("Content-Type", "application/pdf");
-    res.sendFile(filePath);
+    res.redirect(pdfUrl);
 };
