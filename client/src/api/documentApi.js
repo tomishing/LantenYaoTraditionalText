@@ -3,8 +3,8 @@ import axios from "axios";
 // Axios setup 
 // BASE_URL: /api/manuscripts, /api/geocode
 // IMAGE_BASE_URL: image
-const BASE_URL = "http://localhost:3000/api";
-const IMAGE_BASE_URL = "http://localhost:3000";
+const BASE_URL = `${import.meta.env.VITE_API_URL || ""}/api`;
+const IMAGE_BASE_URL = import.meta.env.VITE_API_URL || "";
 
 const client = axios.create({
     baseURL: BASE_URL,

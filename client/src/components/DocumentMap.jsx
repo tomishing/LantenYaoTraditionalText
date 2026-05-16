@@ -11,7 +11,7 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 const fetchCoordinates = async (district) => {
     if (!district) return null;
-    const res = await axios.get("http://localhost:3000/api/geocode", {
+    const res = await axios.get(`${import.meta.env.VITE_API_URL || ""}/api/geocode`, {
         params: { district },
     });
     return res.data;
