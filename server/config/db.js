@@ -1,9 +1,10 @@
 import pg from "pg";
 const { Pool } = pg;
 
-const isLocal = (process.env.PG_URI || "").includes("localhost");
+const connectionString = process.env.PG_URI || process.env.DATABASE_URL;
+const isLocal = (connectionString || "").includes("localhost");
 export const pool = new Pool({
-    connectionString: process.env.PG_URI,
+    connectionString,
     ssl: isLocal ? false : { rejectUnauthorized: false },
 });
 
