@@ -1,5 +1,7 @@
 import { Container } from "react-bootstrap";
 
+const R2 = `${import.meta.env.VITE_R2_PUBLIC_URL || ""}/pics`;
+
 const Photoshooting = () => {
     return (
         <Container className="mt-4 mb-5 markdown-body">
@@ -347,7 +349,7 @@ const Photoshooting = () => {
 
                 <figure className="image-figure">
                     <img
-                        src="/camera.png"
+                        src={`${R2}/camera.png`}
                         alt="Digital camera with strobe diffuser"
                     />
                     <figcaption>
@@ -357,14 +359,14 @@ const Photoshooting = () => {
                 </figure>
 
                 <figure className="image-figure">
-                    <img src="/tripod.png" alt="Tripod" />
+                    <img src={`${R2}/tripod.png`} alt="Tripod" />
                     <figcaption>
                         Figure 2. Tripod. Manfrotto 190XPROB.
                     </figcaption>
                 </figure>
 
                 <figure className="image-figure">
-                    <img src="/tripod01.png" alt="Digital camera studio box" />
+                    <img src={`${R2}/tripod01.png`} alt="Digital camera studio box" />
                     <figcaption>
                         Figure 3. Digital camera studio box. Hakuba digital
                         camera studio box 75.
@@ -372,7 +374,7 @@ const Photoshooting = () => {
                 </figure>
 
                 <figure className="image-figure">
-                    <img src="/shooting02.png" alt="Photo shooting" />
+                    <img src={`${R2}/shooting02.png`} alt="Photo shooting" />
                     <figcaption>
                         Figure 4. Photo shooting. Photographs were taken using
                         software Nikon Camera control pro version 2.4.0.
@@ -380,18 +382,18 @@ const Photoshooting = () => {
                 </figure>
 
                 <figure className="image-figure">
-                    <img src="/shooting01.png" alt="Photo shooting" />
+                    <img src={`${R2}/shooting01.png`} alt="Photo shooting" />
                     <figcaption>Figure 5. Photo shooting.</figcaption>
                 </figure>
 
                 <figure className="image-figure">
-                    <img src="/shooting03.png" alt="Photo shooting" />
+                    <img src={`${R2}/shooting03.png`} alt="Photo shooting" />
                     <figcaption>Figure 6. Photo shooting.</figcaption>
                 </figure>
 
                 <figure className="image-figure">
                     <img
-                        src="/P1040330.JPG"
+                        src={`${R2}/P1040330.JPG`}
                         alt="Photo shooting in the field"
                     />
                     <figcaption>

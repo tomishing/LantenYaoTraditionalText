@@ -1,12 +1,14 @@
 import { Container } from "react-bootstrap";
 
+const R2 = `${import.meta.env.VITE_R2_PUBLIC_URL || ""}/pics`;
+
 const About = () => {
     return (
         <Container className="mt-4 mb-5 markdown-body">
             <div className="about-container">
                 <h2>Traditional Texts of Lanten Yao</h2>
                 <figure className="image-figure">
-                    <img src="/DSC00614.jpg" alt="image" />
+                    <img src={`${R2}/DSC00614.jpg`} alt="image" />
                     <figcaption>(Photo by Tomita, S., Feb 21, 2011)</figcaption>
                 </figure>
                 <p>
@@ -174,7 +176,7 @@ const About = () => {
                 </p>
 
                 <figure className="image-figure">
-                    <img src="/P1040384.JPG" alt="image" />
+                    <img src={`${R2}/P1040384.JPG`} alt="image" />
                     <figcaption>
                         Nam Dii village (Photo by Tomita, S., Aug 20, 2009)
                     </figcaption>
@@ -257,7 +259,7 @@ const About = () => {
                 <br />
                 <h3>Lanten Rituals performed</h3>
                 <figure className="image-figure">
-                    <img src="/DSC00588.jpg" alt="image" />
+                    <img src={`${R2}/DSC00588.jpg`} alt="image" />
                     <figcaption>
                         A ritual performer pays respects to spirits (Photo by
                         Tomita, S., Feb 21, 2011).
@@ -465,7 +467,7 @@ const About = () => {
                 </ul>
 
                 <figure className="image-figure">
-                    <img src="/DSC00631.jpg" alt="image" />
+                    <img src={`${R2}/DSC00631.jpg`} alt="image" />
                     <figcaption>
                         The Tjei sei ritual (Photo by Tomita, S., Feb 16, 2011).
                     </figcaption>
