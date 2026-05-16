@@ -4,9 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "server": "cd server && nodemon server.js",
-        "client": "cd client && npm run dev",
-        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "build": "cd server && npm install && cd ../client && npm install && npm run build",
+        "start": "cd server && node server.js",
         "install:all": "npm install && cd server && npm install && cd ../client && npm install"
     },
     "keywords": [],

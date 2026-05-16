@@ -2,11 +2,15 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import path from "path";
+import { fileURLToPath } from "url";
 import { connectDB } from "./config/db.js";
 import router from "./routes/routes.js";
 import authRoutes from "./routes/authRoutes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import geocodeRouter from "./routes/geocodeRoute.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
 // Database connection
@@ -38,6 +42,14 @@ import imageRouter from "./routes/imageRoute.js";
 import pdfRouter from "./routes/pdfRoute.js";
 app.use("/images", imageRouter);
 app.use("/api/pdfs", pdfRouter);
+
+// Serve built React client in production
+const clientDist = path.join(__dirname, "../client/dist");
+app.use(express.static(clientDist));
+app.get("*", (req, res, next) => {
+  if (req.path.startsWith("/api/") || req.path.startsWith("/images/")) return next();
+  res.sendFile(path.join(clientDist, "index.html"));
+});
 
 // Error
 app.use(errorHandler);

@@ -34,7 +34,7 @@ server/images/
 *jpg
 .gitignore
 *.docx
-
+*.log
 
 
 
