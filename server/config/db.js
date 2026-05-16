@@ -12,7 +12,7 @@ export const connectDB = async () => {
         console.log("Connected to PostgreSQL");
         client.release();
     } catch (err) {
-        console.log("Connection error: ", err.message);
+        console.error("Connection error:", err);
     }
 };
 
