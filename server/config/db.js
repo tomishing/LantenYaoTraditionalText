@@ -1,9 +1,10 @@
 import pg from "pg";
 const { Pool } = pg;
 
+const isLocal = (process.env.PG_URI || "").includes("localhost");
 export const pool = new Pool({
     connectionString: process.env.PG_URI,
-    ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+    ssl: isLocal ? false : { rejectUnauthorized: false },
 });
 
 export const connectDB = async () => {
