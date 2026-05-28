@@ -39,9 +39,9 @@ const documentApi = {
         return data;
     },
 
-    getAll: async ({ page = 1, limit = 9, search = "" } = {}) => {
+    getAll: async ({ page = 1, limit = 9, search = "", hasPdf = false } = {}) => {
         const { data } = await client.get("/manuscripts", {
-            params: { page, limit, search },
+            params: { page, limit, search, hasPdf: hasPdf || undefined },
         });
         return data;
     },

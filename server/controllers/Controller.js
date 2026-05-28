@@ -44,20 +44,30 @@ export const createManu = async (req, res, next) => {
 // Read all with search, and pagenation
 export const getAllManu = async (req, res, next) => {
     try {
-        const { page = 1, limit = 9, search = "" } = req.query;
+        const { page = 1, limit = 9, search = "", hasPdf = "" } = req.query;
 
         let queryText = `
-            SELECT d.*, p.path_img, p.path_pdf 
-            FROM documents d 
+            SELECT d.*, p.path_img, p.path_pdf
+            FROM documents d
             LEFT JOIN pictures p ON d.id = p.id
         `;
-        let countQueryText = `SELECT COUNT(*) FROM documents d`;
+        let countQueryText = `SELECT COUNT(*) FROM documents d LEFT JOIN pictures p ON d.id = p.id`;
         const queryParams = [];
+        const conditions = [];
 
         if (search) {
-            queryText += ` WHERE CAST(d.id AS TEXT) ILIKE $1 OR d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
-            countQueryText += ` WHERE CAST(d.id AS TEXT) ILIKE $1 OR d.title ILIKE $1 OR d.notes ILIKE $1 OR d.keywords ILIKE $1`;
             queryParams.push(`%${search}%`);
+            conditions.push(`(CAST(d.id AS TEXT) ILIKE $${queryParams.length} OR d.title ILIKE $${queryParams.length} OR d.notes ILIKE $${queryParams.length} OR d.keywords ILIKE $${queryParams.length})`);
+        }
+
+        if (hasPdf === "true") {
+            conditions.push(`p.path_pdf IS NOT NULL`);
+        }
+
+        if (conditions.length > 0) {
+            const whereClause = ` WHERE ${conditions.join(" AND ")}`;
+            queryText += whereClause;
+            countQueryText += whereClause;
         }
 
         queryText += ` ORDER BY d.id ASC LIMIT $${queryParams.length + 1} OFFSET $${queryParams.length + 2}`;

@@ -16,6 +16,7 @@ function HomePage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const page = parseInt(searchParams.get("page") || "1", 10);
     const search = searchParams.get("search") || "";
+    const hasPdf = searchParams.get("hasPdf") === "true";
     // The delete confirmation
     const [modal, setModal] = useState({ show: false, id: null, title: "" });
 
@@ -25,9 +26,8 @@ function HomePage() {
     // isError: true if the fetch failed
     // error: The error detail
     const { data, isLoading, isError, error } = useQuery({
-        queryKey: ["documents", page, search], // cache for use data
-        // Display all data and searching: the function calls backend
-        queryFn: () => documentApi.getAll({ page, limit: LIMIT, search }),
+        queryKey: ["documents", page, search, hasPdf],
+        queryFn: () => documentApi.getAll({ page, limit: LIMIT, search, hasPdf }),
         // UX enhancement
         keepPreviousData: true,
     });
@@ -62,6 +62,17 @@ function HomePage() {
         setSearchParams(params);
     };
 
+    const handleHasPdfToggle = (e) => {
+        const params = new URLSearchParams(searchParams);
+        if (e.target.checked) {
+            params.set("hasPdf", "true");
+        } else {
+            params.delete("hasPdf");
+        }
+        params.set("page", "1");
+        setSearchParams(params);
+    };
+
     const handlePageChange = (newPage) => {
         const params = new URLSearchParams(searchParams);
         params.set("page", newPage);
@@ -85,6 +96,18 @@ function HomePage() {
             </div>
 
             <SearchBar onSearch={handleSearch} initialSearch={search} />
+            <div className="form-check mb-3">
+                <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="hasPdfFilter"
+                    checked={hasPdf}
+                    onChange={handleHasPdfToggle}
+                />
+                <label className="form-check-label" htmlFor="hasPdfFilter">
+                    Show only documents with PDF
+                </label>
+            </div>
             {/* // Conditional Rendering */}
             {isLoading ? (
                 <div className="spinner-wrap">
