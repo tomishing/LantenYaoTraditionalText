@@ -21,7 +21,7 @@ const unauthorizedHtml = `<!DOCTYPE html>
   <div class="box">
     <h2>🔒 Login Required</h2>
     <p>You need to login to view this PDF.</p>
-    <a href="/">Go to Login</a>
+    <a href="/login">Go to Login</a>
   </div>
 </body>
 </html>`;
