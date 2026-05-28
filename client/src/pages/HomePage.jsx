@@ -96,7 +96,7 @@ function HomePage() {
             </div>
 
             <SearchBar onSearch={handleSearch} initialSearch={search} />
-            <div className="form-check mb-3">
+            <div className="form-check mb-3 text-start">
                 <input
                     className="form-check-input"
                     type="checkbox"
