@@ -27,6 +27,8 @@ app.use(cors({
 app.use(helmet({
   contentSecurityPolicy: false,
   crossOriginResourcePolicy: { policy: "cross-origin" },
+  // OSM tile servers block requests without a Referer; helmet's default is no-referrer
+  referrerPolicy: { policy: "strict-origin-when-cross-origin" },
 }));
 
 // for reading req.body from frontend, req.body
