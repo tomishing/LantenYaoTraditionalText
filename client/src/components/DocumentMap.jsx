@@ -1,4 +1,9 @@
-import { GoogleMap, LoadScriptNext, Marker } from "@react-google-maps/api";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -7,7 +12,15 @@ const containerStyle = {
     height: "400px",
 };
 
-const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+// Bundlers break Leaflet's default icon URLs, so point them at the imported assets
+const markerIconDefault = L.icon({
+    iconUrl: markerIcon,
+    iconRetinaUrl: markerIcon2x,
+    shadowUrl: markerShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    shadowSize: [41, 41],
+});
 
 const fetchCoordinates = async (district) => {
     if (!district) return null;
@@ -48,22 +61,22 @@ function DocumentMap({ district }) {
         );
     }
 
-    // Define the position object from the fetched data
-    const position = {
-        lat: data.lat,
-        lng: data.lng,
-    };
+    const position = [data.lat, data.lng];
 
     return (
-        <LoadScriptNext googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={position}
-                zoom={13}
-            >
-                <Marker position={position} />
-            </GoogleMap>
-        </LoadScriptNext>
+        // MapContainer ignores center changes after mount, so remount on new coordinates
+        <MapContainer
+            key={position.join(",")}
+            center={position}
+            zoom={13}
+            style={containerStyle}
+        >
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position} icon={markerIconDefault} />
+        </MapContainer>
     );
 }
 

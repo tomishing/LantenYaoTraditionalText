@@ -1,21 +1,45 @@
 import axios from "axios";
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+// Nominatim usage policy: identify the app via User-Agent, max 1 request/second,
+// and cache results. https://operations.osmfoundation.org/policies/nominatim/
+const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
+const USER_AGENT = process.env.NOMINATIM_USER_AGENT || "lanten-manuscripts-app";
+
+const cache = new Map();
+let lastRequest = Promise.resolve();
+
+// Serialize requests so they are spaced at least 1 second apart
+const throttle = () => {
+    const next = lastRequest.then(
+        () => new Promise((resolve) => setTimeout(resolve, 1000))
+    );
+    const current = lastRequest;
+    lastRequest = next;
+    return current;
+};
 
 export const geocodeDistrict = async (district) => {
-    const { data } = await axios.get(
-        "https://maps.googleapis.com/maps/api/geocode/json",
-        {
-            params: {
-                address: `${district}, Laos`,
-                key: GOOGLE_API_KEY,
-            },
-        }
-    );
+    const key = district.trim().toLowerCase();
+    if (cache.has(key)) return cache.get(key);
 
-    if (data.status === "OK" && data.results.length > 0) {
-        const { lat, lng } = data.results[0].geometry.location;
-        return { lat, lng };
+    await throttle();
+
+    const { data } = await axios.get(NOMINATIM_URL, {
+        params: {
+            q: `${district}, Laos`,
+            format: "json",
+            limit: 1,
+        },
+        headers: { "User-Agent": USER_AGENT },
+    });
+
+    if (Array.isArray(data) && data.length > 0) {
+        const coords = {
+            lat: parseFloat(data[0].lat),
+            lng: parseFloat(data[0].lon),
+        };
+        cache.set(key, coords);
+        return coords;
     }
 
     throw new Error("Location not found");

@@ -20,7 +20,7 @@ The data consists of traditional texts from Lanten Yao in Lao PDR. It is stored 
 
 - On the detail page, you can see a preview of the manuscript image, along with the location where the researchers collected the document.
 
-- The map uses the Google Maps Geocoding API to obtain latitude and longitude based on the district name and country name stored in the database.
+- The map uses the OpenStreetMap Nominatim geocoding service to obtain latitude and longitude based on the district name and country name stored in the database.
 
 - The application supports adding, editing, and deleting records. These actions are protected by administrative authentication to secure the application against unauthorized write operations.
 
@@ -49,8 +49,8 @@ Except using TanStack Query
 - _Pagination_:
   Only 9 records are loaded at a time. This saves both loading time and memory, especially as the dataset grows.
 
-- _Google Maps_:
-  The frontend renders a Google Map by receiving latitude and longitude coordinates from the backend, which are geocoded from the district and country names stored in the database.
+- _OpenStreetMap_:
+  The frontend renders an OpenStreetMap map (via Leaflet) by receiving latitude and longitude coordinates from the backend, which are geocoded from the district and country names stored in the database.
 
 ## 6. How to Run This App
 
@@ -77,7 +77,7 @@ CREATE DATABASE lanten_db;
 3. Create a `.env` file in the root of the `server` directory. You will need to provide the following configuration values (make sure to replace the dummy values with your actual data):
    ```env
    PORT=3000
-   GOOGLE_API_KEY=your_google_maps_api_key
+   NOMINATIM_USER_AGENT=lanten-manuscripts-app (you@example.com)
    PG_URI=postgresql://postgres:postgres@localhost:5432/lanten_db
    ADMIN_USER=ADMIN_USER
    ADMIN_PASS=ADMIN_PASS
