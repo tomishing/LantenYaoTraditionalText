@@ -1,6 +1,6 @@
 import DocumentCard from "./DocumentCard";
 
-function DocumentList({ documents = [], onDelete }) {
+function DocumentList({ documents = [] }) {
     if (documents.length === 0) {
         return (
             <div className="alert alert-info text-center mt-3">
@@ -12,7 +12,7 @@ function DocumentList({ documents = [], onDelete }) {
     return (
         <div className="row g-4">
             {documents.map((doc) => (
-                <DocumentCard key={doc._id} doc={doc} onDelete={onDelete} />
+                <DocumentCard key={doc.id} doc={doc} />
             ))}
         </div>
     );

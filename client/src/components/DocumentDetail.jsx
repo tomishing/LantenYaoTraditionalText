@@ -82,15 +82,14 @@ function DocumentDetail({ document: doc }) {
                             <tr>
                                 <th className="detail-table-th">Original PDF</th>
                                 <td>
-                                    {pdfUrl ? (
+                                    <div className="d-flex gap-2 flex-wrap">
                                         <a href={pdfUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-primary">
                                             View Document
                                         </a>
-                                    ) : (
-                                        <span className="text-muted fst-italic">
-                                            You need to login to view this PDF.
-                                        </span>
-                                    )}
+                                        <a href={`${pdfUrl}?download=1`} className="btn btn-sm btn-outline-primary">
+                                            Download PDF
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         )}

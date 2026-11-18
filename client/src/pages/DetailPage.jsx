@@ -1,16 +1,12 @@
-import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import documentApi from "../api/documentApi";
 import DocumentDetail from "../components/DocumentDetail";
-import ConfirmModal from "../components/ConfirmModal";
 import { MdError } from "react-icons/md";
 
 function DetailPage() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const qc = useQueryClient();
-    const [showModal, setShowModal] = useState(false);
 
     const {
         data: doc,
@@ -21,19 +17,6 @@ function DetailPage() {
         queryKey: ["document", id],
         queryFn: () => documentApi.getById(id),
         enabled: !!id, // ✅ prevents undefined calls
-    });
-
-    const { mutate: deleteDoc, isPending: deleting } = useMutation({
-        mutationFn: () => documentApi.remove(id),
-        onSuccess: () => {
-            qc.invalidateQueries({ queryKey: ["documents"] }); // ✅ FIXED
-            navigate("/");
-        },
-        onError: (err) => {
-            alert(
-                `Delete error: ${err.response?.data?.message ?? err.message}`,
-            );
-        },
     });
 
     if (isLoading) {
@@ -61,12 +44,6 @@ function DetailPage() {
                     <p className="text-muted small mb-0">{doc?.title}</p>
                 </div>
                 <div className="d-flex gap-2">
-                    <button
-                        className="btn btn-warning"
-                        onClick={() => navigate(`/edit/${id}`)}
-                    >
-                        Edit
-                    </button>
                     <button
                         className="btn btn-outline-secondary"
                         onClick={() => navigate(-1)}

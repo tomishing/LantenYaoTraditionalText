@@ -6,7 +6,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { connectDB } from "./config/db.js";
 import router from "./routes/routes.js";
-import authRoutes from "./routes/authRoutes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import geocodeRouter from "./routes/geocodeRoute.js";
 
@@ -35,7 +34,6 @@ app.use(helmet({
 app.use(express.json({ limit: "10kb" }));
 
 // mount root
-app.use("/api/auth", authRoutes);
 app.use("/api/manuscripts", router);
 app.use("/api/geocode", geocodeRouter);
 

@@ -4,7 +4,7 @@
 
 ## 1. Purpose
 
-The purpose of this application is to make it easier for researchers and users to manage traditional texts through, simple, clean, and a user-friendly interface. While a database is the most efficient way to manage a data collection, researchers are not necessarily skilled in database operations. Therefore, this application, named the Traditional Text Management System, is designed to help users browse, add, edit, and delete records without any technical knowledge of the underlying database.
+The purpose of this application is to make it easier for researchers and users to manage traditional texts through, simple, clean, and a user-friendly interface. While a database is the most efficient way to manage a data collection, researchers are not necessarily skilled in database operations. Therefore, this application, named the Traditional Text Management System, is designed to help users browse, search, view, and download records without any technical knowledge of the underlying database.
 
 ## 2. Data
 
@@ -22,13 +22,7 @@ The data consists of traditional texts from Lanten Yao in Lao PDR. It is stored 
 
 - The map uses the OpenStreetMap Nominatim geocoding service to obtain latitude and longitude based on the district name and country name stored in the database.
 
-- The application supports adding, editing, and deleting records. These actions are protected by administrative authentication to secure the application against unauthorized write operations.
-
-- For example, an authenticated administrator can add a new record by clicking the "New Document" button. We fill in the fields and submit the form. As you can see, the new record now appears in the list.
-
-- Next, we can update a record by clicking the "Edit" button. Let me change a few fields and click "Save." You can see the data has been updated on the detail page. We can also verify this change directly in PostgreSQL.
-
-- Finally, if we want to delete this record, we click the "Delete" button. A confirmation dialog appears to prevent accidental deletion. Once we click "Delete," the document is permanently removed from the database.
+- The application is read-only and needs no login. Anyone can browse, search, view the details of, and download the PDF of a document. There are no endpoints for adding, editing, or deleting records; changes to the data are made directly in PostgreSQL.
 
 ## 4. Architecture diagram
 
@@ -79,9 +73,6 @@ CREATE DATABASE lanten_db;
    PORT=3000
    NOMINATIM_USER_AGENT=lanten-manuscripts-app (you@example.com)
    PG_URI=postgresql://postgres:postgres@localhost:5432/lanten_db
-   ADMIN_USER=ADMIN_USER
-   ADMIN_PASS=ADMIN_PASS
-   JWT_SECRET=your_jwt_secret
    ```
 4. Start the backend server:
    ```bash
