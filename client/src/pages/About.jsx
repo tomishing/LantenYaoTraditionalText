@@ -125,9 +125,10 @@ const About = () => {
                 <br />
                 <h3>Overview of Field Activities</h3>
                 <p>
-                    The team photographed texts in two villages in Luang Nam Tha
-                    and one village in Oudomxay. The two Luang Nam Tha villages
-                    are the largest Lanten Yao villages in the province.
+                    The team photographed texts in two villages in Luang Nam Tha,
+                    one village in Oudomxay and one village in Phongsaly. The two
+                    Luang Nam Tha villages are the largest Lanten Yao villages in
+                    the province.
                 </p>
                 <h4>Nam Dii village</h4>
                 <p>
@@ -255,6 +256,22 @@ const About = () => {
                     The Paak Nam Tong Lanten are represented by three clans:
                     Wang (黄), Lou (羅), and Li (李). The numerically dominant
                     clan is Li.
+                </p>
+
+                <h4>Somxai village</h4>
+                <p>
+                    Ban Somxai is located in Nyot Ou district of Phongsaly
+                    province. It is a village of about 60 households, where Yao
+                    live together with Lao Theung people.
+                </p>
+                <p>
+                    The owner of the texts photographed here, 王二仙 (Wang
+                    Erxian), was 33 years old at the time of the research and
+                    speaks Chinese. The owner came to Somxai in 2002 from near
+                    the Chinese border, where there was an old village, moving in
+                    search of land for paddy fields. The family has relatives in
+                    China, Thailand and Phongsaly, but none in Oudomxay or Luang
+                    Nam Tha.
                 </p>
                 <br />
                 <h3>Lanten Rituals performed</h3>
