@@ -82,7 +82,7 @@ function DocumentDetail({ document: doc }) {
                             <tr>
                                 <th className="detail-table-th">Original PDF</th>
                                 <td>
-                                    <div className="d-flex gap-2 flex-wrap">
+                                    <div className="d-flex gap-2 flex-wrap justify-content-center">
                                         <a href={pdfUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-primary">
                                             View Document
                                         </a>
