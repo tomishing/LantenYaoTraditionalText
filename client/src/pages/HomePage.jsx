@@ -17,6 +17,9 @@ function HomePage() {
     const page = parseInt(searchParams.get("page") || "1", 10);
     const search = searchParams.get("search") || "";
     const hasPdf = searchParams.get("hasPdf") === "true";
+    const province = searchParams.get("province") || "";
+    const district = searchParams.get("district") || "";
+    const village = searchParams.get("village") || "";
     // The delete confirmation
     const [modal, setModal] = useState({ show: false, id: null, title: "" });
 
@@ -26,8 +29,11 @@ function HomePage() {
     // isError: true if the fetch failed
     // error: The error detail
     const { data, isLoading, isError, error } = useQuery({
-        queryKey: ["documents", page, search, hasPdf],
-        queryFn: () => documentApi.getAll({ page, limit: LIMIT, search, hasPdf }),
+        queryKey: ["documents", page, search, hasPdf, province, district, village],
+        queryFn: () =>
+            documentApi.getAll({
+                page, limit: LIMIT, search, hasPdf, province, district, village,
+            }),
         // UX enhancement
         keepPreviousData: true,
     });
@@ -51,12 +57,15 @@ function HomePage() {
     });
 
     // ** Event Handlers
-    const handleSearch = (value) => {
+    // filters: { search, province, district, village }
+    const handleSearch = (filters) => {
         const params = new URLSearchParams(searchParams);
-        if (value) {
-            params.set("search", value);
-        } else {
-            params.delete("search");
+        for (const [key, value] of Object.entries(filters)) {
+            if (value) {
+                params.set(key, value);
+            } else {
+                params.delete(key);
+            }
         }
         params.set("page", "1");
         setSearchParams(params);
@@ -95,7 +104,11 @@ function HomePage() {
                 )}
             </div>
 
-            <SearchBar onSearch={handleSearch} initialSearch={search} />
+            <SearchBar
+                key={[search, province, district, village].join("|")}
+                onSearch={handleSearch}
+                initialValues={{ search, province, district, village }}
+            />
             <div className="form-check mb-3 text-start">
                 <input
                     className="form-check-input"

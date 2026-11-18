@@ -44,7 +44,10 @@ export const createManu = async (req, res, next) => {
 // Read all with search, and pagenation
 export const getAllManu = async (req, res, next) => {
     try {
-        const { page = 1, limit = 9, search = "", hasPdf = "" } = req.query;
+        const {
+            page = 1, limit = 9, search = "", hasPdf = "",
+            province = "", district = "", village = ""
+        } = req.query;
 
         let queryText = `
             SELECT d.*, p.path_img, p.path_pdf
@@ -58,6 +61,16 @@ export const getAllManu = async (req, res, next) => {
         if (search) {
             queryParams.push(`%${search}%`);
             conditions.push(`(CAST(d.id AS TEXT) ILIKE $${queryParams.length} OR d.title ILIKE $${queryParams.length} OR d.notes ILIKE $${queryParams.length} OR d.keywords ILIKE $${queryParams.length})`);
+        }
+
+        // Location filters (partial, case-insensitive match)
+        const locationFilters = { province, district, village };
+        for (const [column, value] of Object.entries(locationFilters)) {
+            const trimmed = String(value).trim();
+            if (trimmed) {
+                queryParams.push(`%${trimmed}%`);
+                conditions.push(`d.${column} ILIKE $${queryParams.length}`);
+            }
         }
 
         if (hasPdf === "true") {
@@ -91,6 +104,30 @@ export const getAllManu = async (req, res, next) => {
             total,
             currentPage: pageNum,
             totalPages: Math.ceil(total / limitNum),
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+// Distinct province/district/village combinations (for search suggestions)
+export const getLocations = async (req, res, next) => {
+    try {
+        const result = await pool.query(
+            `SELECT DISTINCT
+                NULLIF(TRIM(province), '') AS province,
+                NULLIF(TRIM(district), '') AS district,
+                NULLIF(TRIM(village), '') AS village
+             FROM documents
+             WHERE COALESCE(TRIM(province), '') <> ''
+                OR COALESCE(TRIM(district), '') <> ''
+                OR COALESCE(TRIM(village), '') <> ''
+             ORDER BY province, district, village`
+        );
+
+        res.status(200).json({
+            success: true,
+            locations: result.rows,
         });
     } catch (err) {
         next(err);

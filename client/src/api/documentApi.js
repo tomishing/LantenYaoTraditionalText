@@ -39,11 +39,26 @@ const documentApi = {
         return data;
     },
 
-    getAll: async ({ page = 1, limit = 9, search = "", hasPdf = false } = {}) => {
+    getAll: async ({
+        page = 1, limit = 9, search = "", hasPdf = false,
+        province = "", district = "", village = "",
+    } = {}) => {
         const { data } = await client.get("/manuscripts", {
-            params: { page, limit, search, hasPdf: hasPdf || undefined },
+            params: {
+                page, limit, search,
+                hasPdf: hasPdf || undefined,
+                province: province || undefined,
+                district: district || undefined,
+                village: village || undefined,
+            },
         });
         return data;
+    },
+
+    // [{ province, district, village }, ...] distinct combinations
+    getLocations: async () => {
+        const { data } = await client.get("/manuscripts/locations");
+        return data.locations;
     },
 
     getById: async (id) => {
