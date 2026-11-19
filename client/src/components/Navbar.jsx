@@ -4,7 +4,7 @@ import { RiBookShelfFill } from "react-icons/ri";
 
 export default function MyNavbar() {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm">
+        <Navbar variant="dark" expand="lg" className="site-navbar shadow-sm">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand style={{ cursor: "pointer" }}>
