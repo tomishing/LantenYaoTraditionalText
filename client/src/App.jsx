@@ -9,6 +9,7 @@ import Photoshooting from "./pages/Photoshooting";
 import Footer from "./components/Footer";
 import References from "./pages/References";
 import Rituals from "./pages/Rituals";
+import Copyright from "./pages/Copyright";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/photoshooting" element={<Photoshooting />} />
                     <Route path="/references" element={<References />} />
                     <Route path="/rituals" element={<Rituals />} />
+                    <Route path="/copyright" element={<Copyright />} />
                 </Routes>
             </main>
             <Footer />

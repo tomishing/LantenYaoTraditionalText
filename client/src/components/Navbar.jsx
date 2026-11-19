@@ -47,6 +47,12 @@ export default function MyNavbar() {
                             <LinkContainer to="/references">
                                 <NavDropdown.Item>References</NavDropdown.Item>
                             </LinkContainer>
+                            <NavDropdown.Divider />
+                            <LinkContainer to="/copyright">
+                                <NavDropdown.Item>
+                                    Copyright and Terms of Use
+                                </NavDropdown.Item>
+                            </LinkContainer>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
