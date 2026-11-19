@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import documentApi from "../api/documentApi";
 import DocumentDetail from "../components/DocumentDetail";
 import { MdError } from "react-icons/md";
+import Seo from "../components/Seo";
 
 function DetailPage() {
     const { id } = useParams();
@@ -35,8 +36,20 @@ function DetailPage() {
         );
     }
 
+    const description = [
+        doc?.title,
+        doc?.category && `${doc.category} text`,
+        doc?.district && `from ${doc.district}, Laos`,
+        "— Lanten Yao traditional manuscript.",
+        doc?.notes,
+    ]
+        .filter(Boolean)
+        .join(" ")
+        .slice(0, 300);
+
     return (
         <>
+            <Seo title={doc?.title || "Document Detail"} description={description} />
             {/* Page header */}
             <div className="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-2">
                 <div>
