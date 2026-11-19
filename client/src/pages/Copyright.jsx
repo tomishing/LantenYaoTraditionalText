@@ -67,8 +67,14 @@ const Copyright = () => {
                 <h4>Contact</h4>
                 <p>
                     For permission requests or questions about the materials,
-                    please contact the project team:
+                    please contact:
                 </p>
+                <p>
+                    Shinsuke TOMITA
+                    <br />
+                    <a href="mailto:tomishing@gmail.com">tomishing@gmail.com</a>
+                </p>
+                <p>Project team:</p>
                 <section>
                     Shinsuke TOMITA, The University of Tokyo
                     <br />
