@@ -2,6 +2,7 @@ import express from "express";
 import {
     getAllManu,
     getLocations,
+    getCategories,
     getManuById,
 } from "../controllers/Controller.js";
 
@@ -11,6 +12,7 @@ const router = express.Router();
 router.get("/", getAllManu);
 // Distinct locations for search suggestions (must be before "/:id")
 router.get("/locations", getLocations);
+router.get("/categories", getCategories);
 router.get("/:id", getManuById);
 
 export default router;

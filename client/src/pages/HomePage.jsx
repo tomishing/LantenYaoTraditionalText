@@ -15,6 +15,7 @@ function HomePage() {
     const province = searchParams.get("province") || "";
     const district = searchParams.get("district") || "";
     const village = searchParams.get("village") || "";
+    const category = searchParams.get("category") || "";
 
     // ** Fetching data from backend **
     // data: documents, total, currentPage, totalPages from backend
@@ -22,16 +23,16 @@ function HomePage() {
     // isError: true if the fetch failed
     // error: The error detail
     const { data, isLoading, isError, error } = useQuery({
-        queryKey: ["documents", page, search, hasPdf, province, district, village],
+        queryKey: ["documents", page, search, hasPdf, province, district, village, category],
         queryFn: () =>
             documentApi.getAll({
-                page, limit: LIMIT, search, hasPdf, province, district, village,
+                page, limit: LIMIT, search, hasPdf, province, district, village, category,
             }),
         // UX enhancement
         keepPreviousData: true,
     });
     // ** Event Handlers
-    // filters: { search, province, district, village }
+    // filters: { search, category, province, district, village }
     const handleSearch = (filters) => {
         const params = new URLSearchParams(searchParams);
         for (const [key, value] of Object.entries(filters)) {
@@ -74,9 +75,9 @@ function HomePage() {
             </div>
 
             <SearchBar
-                key={[search, province, district, village].join("|")}
+                key={[search, category, province, district, village].join("|")}
                 onSearch={handleSearch}
-                initialValues={{ search, province, district, village }}
+                initialValues={{ search, category, province, district, village }}
             />
             <div className="form-check mb-3 text-start">
                 <input

@@ -14,7 +14,7 @@ export const getAllManu = async (req, res, next) => {
     try {
         const {
             page = 1, limit = 9, search = "", hasPdf = "",
-            province = "", district = "", village = ""
+            province = "", district = "", village = "", category = ""
         } = req.query;
 
         let queryText = `
@@ -39,6 +39,13 @@ export const getAllManu = async (req, res, next) => {
                 queryParams.push(`%${trimmed}%`);
                 conditions.push(`d.${column} ILIKE $${queryParams.length}`);
             }
+        }
+
+        // Category filter (exact, case-insensitive match)
+        const categoryTrimmed = String(category).trim();
+        if (categoryTrimmed) {
+            queryParams.push(categoryTrimmed);
+            conditions.push(`LOWER(TRIM(d.category)) = LOWER($${queryParams.length})`);
         }
 
         if (hasPdf === "true") {
@@ -96,6 +103,26 @@ export const getLocations = async (req, res, next) => {
         res.status(200).json({
             success: true,
             locations: result.rows,
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+// Distinct categories (for the category filter)
+export const getCategories = async (req, res, next) => {
+    try {
+        const result = await pool.query(
+            `SELECT TRIM(category) AS category, COUNT(*)::int AS count
+             FROM documents
+             WHERE COALESCE(TRIM(category), '') <> ''
+             GROUP BY TRIM(category)
+             ORDER BY TRIM(category)`
+        );
+
+        res.status(200).json({
+            success: true,
+            categories: result.rows,
         });
     } catch (err) {
         next(err);

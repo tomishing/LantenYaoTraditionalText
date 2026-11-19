@@ -1,9 +1,11 @@
 import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSearch, FaMapMarkerAlt, FaTags } from "react-icons/fa";
 import documentApi from "../api/documentApi";
 
-const EMPTY = { search: "", province: "", district: "", village: "" };
+const EMPTY = {
+    search: "", category: "", province: "", district: "", village: "",
+};
 
 const LOCATION_FIELDS = [
     { key: "province", label: "Province" },
@@ -29,6 +31,12 @@ function SearchBar({ onSearch, initialValues = EMPTY }) {
     const { data: locations = [] } = useQuery({
         queryKey: ["documents", "locations"],
         queryFn: documentApi.getLocations,
+        staleTime: 5 * 60 * 1000,
+    });
+
+    const { data: categories = [] } = useQuery({
+        queryKey: ["documents", "categories"],
+        queryFn: documentApi.getCategories,
         staleTime: 5 * 60 * 1000,
     });
 
@@ -78,6 +86,29 @@ function SearchBar({ onSearch, initialValues = EMPTY }) {
                         value={values.search}
                         onChange={handleChange("search")}
                     />
+                </div>
+
+                {/* Category row */}
+                <div className="mb-3 text-start">
+                    <label
+                        className="form-label fw-semibold mb-1"
+                        htmlFor="category-select"
+                    >
+                        <FaTags /> Category
+                    </label>
+                    <select
+                        id="category-select"
+                        className="form-select"
+                        value={values.category}
+                        onChange={handleChange("category")}
+                    >
+                        <option value="">All categories</option>
+                        {categories.map(({ category, count }) => (
+                            <option key={category} value={category}>
+                                {category} ({count})
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 {/* Location row */}

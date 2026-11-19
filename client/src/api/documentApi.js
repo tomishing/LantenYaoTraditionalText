@@ -26,7 +26,7 @@ export const getPdfUrl = (pathPdf) => {
 const documentApi = {
     getAll: async ({
         page = 1, limit = 9, search = "", hasPdf = false,
-        province = "", district = "", village = "",
+        province = "", district = "", village = "", category = "",
     } = {}) => {
         const { data } = await client.get("/manuscripts", {
             params: {
@@ -35,6 +35,7 @@ const documentApi = {
                 province: province || undefined,
                 district: district || undefined,
                 village: village || undefined,
+                category: category || undefined,
             },
         });
         return data;
@@ -44,6 +45,12 @@ const documentApi = {
     getLocations: async () => {
         const { data } = await client.get("/manuscripts/locations");
         return data.locations;
+    },
+
+    // [{ category, count }, ...] distinct categories
+    getCategories: async () => {
+        const { data } = await client.get("/manuscripts/categories");
+        return data.categories;
     },
 
     getById: async (id) => {
