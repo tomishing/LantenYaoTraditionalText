@@ -168,6 +168,11 @@ main.container {
   font-weight: 600;
 }
 
+.detail-table td.detail-notes {
+  text-align: left;
+  white-space: pre-line;
+}
+
 /* ── Spinner ─────────────────────────────── */
 .spinner-wrap {
   display: flex;

@@ -3,11 +3,11 @@ import DocumentMap from "./DocumentMap";
 import { FaMapMarkerAlt } from "react-icons/fa";
 const PLACEHOLDER = "https://placehold.co/800x400?text=No+Image";
 
-function Row({ label, value }) {
+function Row({ label, value, className }) {
     return (
         <tr>
             <th className="detail-table-th">{label}</th>
-            <td>{value ?? <span className="text-muted">—</span>}</td>
+            <td className={className}>{value ?? <span className="text-muted">—</span>}</td>
         </tr>
     );
 }
@@ -57,7 +57,7 @@ function DocumentDetail({ document: doc }) {
                         <Row label="Length (mm)" value={doc.length_mm} />
                         <Row label="Wide (mm)" value={doc.wide_mm} />
                         <Row label="Keywords" value={doc.keywords} />
-                        <Row label="Notes" value={doc.notes} />
+                        <Row label="Notes" value={doc.notes} className="detail-notes" />
                         <Row
                             label="Created At"
                             value={
