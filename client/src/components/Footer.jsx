@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer py-3 text-muted small">
             <Container>
-                © 2008–2026 Lanten Yao Traditional Text Archive. Licensed
+                © 2009–2026 Lanten Yao Traditional Text Archive. Licensed
                 under{" "}
                 <a
                     href="https://creativecommons.org/licenses/by-nc/4.0/"

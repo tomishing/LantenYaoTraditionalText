@@ -8,12 +8,12 @@ const Copyright = () => {
                 <br />
                 <h4>Copyright</h4>
                 <p>
-                    © 2008–2026 Lanten Yao Traditional Texts Project.
+                    © 2009–2026 Lanten Yao Traditional Texts Project.
                 </p>
                 <p>
                     The digital images of traditional texts, photographs,
                     essays and other materials on this website were produced
-                    from 2008 to 2010 by the project “The Preservation,
+                    from 2009 to 2010 by the project “The Preservation,
                     Compilation and Reading of Lanten Yao Traditional Texts in
                     Northern Laos” (the Lanten Yao Traditional Texts Project),
                     with the permission and local collaboration
@@ -93,7 +93,7 @@ const Copyright = () => {
                 <p>
                     <em>
                         Lanten Yao Traditional Text Archive, [text title / ID].
-                        Photographed 2008–2010 by the project “The
+                        Photographed 2009–2010 by the project “The
                         Preservation, Compilation and Reading of Lanten Yao
                         Traditional Texts in Northern Laos”. Licensed under CC
                         BY-NC 4.0. Accessed [date].

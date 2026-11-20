@@ -38,7 +38,7 @@ const MigrationChina = () => {
                 <h3>Acquisition of the text and its background</h3>
                 <p>
                     This text emerged when we were photographing ritual texts on
-                    28 February 2008, at Pak Nam Tong village, Namo District in
+                    28 February 2009, at Pak Nam Tong village, Namo District in
                     Oudomxay province. The text belongs to Mr Khamchanh, the
                     headman of the village. The text is labeled as Part II
                     (下巻) and it is believed that originally the text was a two
