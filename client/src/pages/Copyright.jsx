@@ -8,8 +8,8 @@ const Copyright = () => {
                 <br />
                 <h4>Copyright</h4>
                 <p>
-                    © 2008–2026 Lanten Yao Traditional Text Archive project
-                    team.
+                    © 2008–2026 The Preservation, Compilation and Reading of
+                    Lanten Yao Traditional Texts in Northern Laos project.
                 </p>
                 <p>
                     The digital images of traditional texts, photographs,
@@ -19,7 +19,7 @@ const Copyright = () => {
                     Northern Laos”, with the permission and local collaboration
                     of the National Library of Laos and the financial support
                     of the Toyota Foundation. Unless otherwise noted, these
-                    materials are held by the project team and the respective
+                    materials are held by the project and the respective
                     authors and photographers.
                 </p>
 
