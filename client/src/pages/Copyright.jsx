@@ -8,45 +8,80 @@ const Copyright = () => {
                 <br />
                 <h4>Copyright</h4>
                 <p>
-                    © 2009–2026 Lanten Yao Traditional Text Archive project
-                    team. All rights reserved.
+                    © 2008–2026 Lanten Yao Traditional Text Archive project
+                    team.
                 </p>
                 <p>
                     The digital images of traditional texts, photographs,
                     essays and other materials on this website were produced
-                    by the project “The Preservation, Compilation and Reading
-                    of Lanten Yao Traditional Texts in Northern Laos”, with the
-                    local collaboration of the National Library of Laos and the
-                    financial support of the Toyota Foundation. Unless
-                    otherwise noted, copyright in these materials is held by
-                    the project team and the respective authors and
-                    photographers.
+                    from 2008 to 2010 by the project “The Preservation,
+                    Compilation and Reading of Lanten Yao Traditional Texts in
+                    Northern Laos”, with the permission and local collaboration
+                    of the National Library of Laos and the financial support
+                    of the Toyota Foundation. Unless otherwise noted, these
+                    materials are held by the project team and the respective
+                    authors and photographers.
+                </p>
+
+                <h4>License</h4>
+                <p>
+                    Unless otherwise noted, the materials on this website are
+                    licensed under the{" "}
+                    <a
+                        href="https://creativecommons.org/licenses/by-nc/4.0/"
+                        target="_blank"
+                        rel="license noopener noreferrer"
+                    >
+                        Creative Commons Attribution-NonCommercial 4.0
+                        International License (CC BY-NC 4.0)
+                    </a>
+                    .
+                </p>
+                <p>Under this license you are free to:</p>
+                <ul>
+                    <li>
+                        <strong>Share</strong>: copy and redistribute the
+                        material in any medium or format.
+                    </li>
+                    <li>
+                        <strong>Adapt</strong>: remix, transform and build
+                        upon the material.
+                    </li>
+                </ul>
+                <p>under the following terms:</p>
+                <ul>
+                    <li>
+                        <strong>Attribution</strong>: you must give
+                        appropriate credit (see “Citation” below), provide a
+                        link to the license, and indicate if changes were
+                        made.
+                    </li>
+                    <li>
+                        <strong>NonCommercial</strong>: you may not use the
+                        material for commercial purposes.
+                    </li>
+                </ul>
+                <p>
+                    For commercial use, please contact the project team for
+                    permission.
                 </p>
 
                 <h4>The traditional texts and their owners</h4>
                 <p>
                     The traditional texts themselves belong to the Lanten
                     people and to the ritual practitioners and families who
-                    keep them. They were photographed with the generous
+                    keep them. The original manuscripts remain with their
+                    owners. They were photographed with the generous
                     cooperation of the owners for the purposes of preservation
-                    and research. Please treat these materials with respect for
-                    the communities and the ritual traditions they represent.
+                    and research, and only texts that their owners allowed us
+                    to photograph are included; texts that Lanten people asked
+                    us not to photograph were not recorded.
                 </p>
-
-                <h4>Permitted use</h4>
                 <p>
-                    You may freely view and browse the materials on this
-                    website, and refer to them for personal study, research and
-                    education.
-                </p>
-
-                <h4>Use that requires permission</h4>
-                <p>
-                    Reproduction, redistribution, publication (in print or
-                    online), modification, or any commercial use of the images,
-                    photographs or texts on this website requires prior written
-                    permission from the project team. This includes downloading
-                    and re-hosting the PDF files of the texts.
+                    Please treat these materials with respect for the
+                    communities and the ritual traditions they represent. Some
+                    texts are marked “silent reading”: in the Lanten tradition
+                    these texts are not read aloud during rituals.
                 </p>
 
                 <h4>Citation</h4>
@@ -58,15 +93,16 @@ const Copyright = () => {
                 <p>
                     <em>
                         Lanten Yao Traditional Text Archive, [text title / ID].
-                        Photographed 2009–2010 by the project “The
+                        Photographed 2008–2010 by the project “The
                         Preservation, Compilation and Reading of Lanten Yao
-                        Traditional Texts in Northern Laos”. Accessed [date].
+                        Traditional Texts in Northern Laos”. Licensed under CC
+                        BY-NC 4.0. Accessed [date].
                     </em>
                 </p>
 
                 <h4>Contact</h4>
                 <p>
-                    For permission requests or questions about the materials,
+                    For commercial-use requests or questions about the materials,
                     please contact:
                 </p>
                 <p>
