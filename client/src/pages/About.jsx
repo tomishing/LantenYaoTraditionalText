@@ -15,12 +15,13 @@ const About = () => {
                     The traditional text in the database is from the project,
                     “The Preservation, Compilation and Reading of Lanten Yao
                     Traditional Texts in Northern Laos”. This was designed to
-                    collect, record and the traditional texts of the Lanten
+                    collect and record the traditional texts of the Lanten
                     people, making this information available to the general
-                    academic public. The project was run during the period of
-                    2009-2010, with the local collaboration of the National
-                    Library of Laos and the financial support of the Toyota
-                    Foundation. With the generous cooperation of many Lanten
+                    academic public. The project ran from November 2008 to
+                    November 2010, with the permission and local collaboration
+                    of the National Library of Laos and the financial support
+                    of the Toyota Foundation. The texts were photographed in
+                    2009 and 2010. With the generous cooperation of many Lanten
                     people, the project was able to assemble a significant body
                     of these texts.
                 </p>
@@ -67,8 +68,10 @@ const About = () => {
                     are being used. As is discussed below, ritual practicioners
                     in Lanten villages are reproducing their texts. However,
                     there is an urgent need to record this body of texts
-                    digitally. In the project we have photographed 7,508 texts,
-                    the vast majority of which are used in rituals. Of these,
+                    digitally. In the project we catalogued 282 texts and
+                    ritual objects, the vast majority of which are used in
+                    rituals. This database presents page images of 243 of them,
+                    8,513 pages in all. Of these texts,
                     <em>tjei sei</em> (戒弟子) , the Lanten themselves consider
                     to be very important, will be edited and presented back to
                     the villagers. We hope that this will be useful for the
@@ -102,9 +105,11 @@ const About = () => {
                 </p>
                 <p>
                     This project focused its data collection on Lanten villages
-                    located in Luang Nam Tha and Oudomxay provinces. The texts
-                    and related information presented here are therefore from
-                    the Kim Ha Mun sub-group of the Lanten.
+                    located in Luang Nam Tha and Oudomxay provinces, and most of
+                    the texts and related information presented here are
+                    therefore from the Kim Ha Mun sub-group of the Lanten. Ten
+                    items come from Somxai village in Nyot Ou district,
+                    Phongsaly province.
                 </p>
                 <p>
                     The team would like to express its most sincere appreciation
